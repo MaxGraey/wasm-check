@@ -41,6 +41,8 @@ console.log(check.supportStreaming);
 
 ```ts
 import check from 'wasm-check';
+// for node.js:
+// const check = require('wasm-check').default;
 
 const features = { ...check.feature };
 console.log(features);
