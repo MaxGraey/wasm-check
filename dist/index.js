@@ -8,6 +8,7 @@ exports.default = {
         return hasStreaming;
     },
     feature: {
+        get bigInt() { return checkAndRun(bigIntWasm); },
         // Bulk memory operations
         get bulk() { return check(bulkWasm); },
         // Exception handling (--experimental-wasm-eh)
@@ -33,10 +34,21 @@ exports.default = {
 function check(wasm) {
     return exists && WebAssembly.validate(wasm);
 }
+function checkAndRun(wasm, name = '0') {
+    if (check(wasm)) {
+        try {
+            new WebAssembly.Instance(wasm, {}).exports[name]();
+            return true;
+        }
+        catch { }
+    }
+    return false;
+}
 const exists = typeof WebAssembly === 'object' &&
     typeof WebAssembly.validate === 'function';
 const hasStreaming = typeof WebAssembly.instantiateStreaming === 'function' &&
     typeof WebAssembly.compileStreaming === 'function';
+const bigIntWasm = Uint32Array.of(0x6D736100, 1, 1610679553, 58589440, 117440770, 805372165, 101318656, 1107297281, 268438272, 1835101700, 17039717, 36700416, 259);
 const bulkWasm = Uint32Array.of(0x6D736100, 1, 1610679297, 33751040, 50659329, 167837697, 983313, 4259905, 150732865, 167510016, 67832576, 1627455745, 1845758464, 40201569, 259);
 const exceptionsWasm = Uint16Array.of(24832, 28019, 1, 0, 1025, 24577, 0, 515, 1, 781, 1, 2560, 265, 7, 16390, 2311, 2827, 2560, 28164, 28001, 613, 259, 0);
 const mutableGlobalsWasm = Uint32Array.of(0x6D736100, 1, 2130773510, 184566017, 16844039, 865, 1634599944, 16934253, 0);

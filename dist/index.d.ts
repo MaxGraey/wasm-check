@@ -2,6 +2,7 @@ declare const _default: {
     support(version?: number): boolean;
     readonly supportStreaming: boolean;
     feature: {
+        readonly bigInt: boolean;
         readonly bulk: boolean;
         readonly exceptions: boolean;
         readonly mutableGlobals: boolean;

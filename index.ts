@@ -8,6 +8,7 @@ export default {
   },
 
   feature: {
+    get bigInt() { return checkAndRun(bigIntWasm) },
     // Bulk memory operations
     get bulk() { return check(bulkWasm) },
     // Exception handling (--experimental-wasm-eh)
@@ -32,12 +33,21 @@ export default {
     // TODO
     // GC
     // Function Refs
-    // BigInt integration
   }
 }
 
 function check(wasm: ArrayBufferView) {
   return exists && WebAssembly.validate(wasm);
+}
+
+function checkAndRun(wasm: ArrayBufferView, name: string = '0') {
+  if (check(wasm)) {
+    try {
+      new WebAssembly.Instance(wasm, {}).exports[name]()
+      return true;
+    } catch {}
+  }
+  return false;
 }
 
 const exists =
@@ -47,6 +57,11 @@ const exists =
 const hasStreaming =
   typeof WebAssembly.instantiateStreaming === 'function' &&
   typeof WebAssembly.compileStreaming === 'function'
+
+const bigIntWasm = Uint32Array.of(
+  0x6D736100, 1, 1610679553, 58589440, 117440770, 805372165, 101318656,
+  1107297281, 268438272, 1835101700, 17039717, 36700416, 259
+)
 
 const bulkWasm = Uint32Array.of(
   0x6D736100, 1, 1610679297, 33751040, 50659329, 167837697, 983313, 4259905,

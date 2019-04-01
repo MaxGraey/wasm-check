@@ -48,7 +48,8 @@ console.log(features);
 
 Output:
 ```js
-{ bulk: false,
+{ bigInt: false,
+  bulk: false,
   exceptions: false,
   mutableGlobals: true,
   multiValues: false,
@@ -71,6 +72,5 @@ console.log(check.feature.tailCalls); // has tail call optimization support?
 
 ### TODO
 
-- [ ] BigInt integration feature check
 - [ ] GC integration feature check
 - [ ] funcref/closure feature check
