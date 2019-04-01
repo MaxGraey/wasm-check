@@ -53,3 +53,11 @@ Output:
   simd: false,
   references: false }
 ```
+
+or
+
+```ts
+import check from 'wasm-check';
+console.log(check.simd); // has SIMD support?
+console.log(check.tailCalls); // has tail call optimization support?
+```
