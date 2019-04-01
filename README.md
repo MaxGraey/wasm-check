@@ -23,6 +23,8 @@ yarn add github:MaxGraey/wasm-check
 
 ```ts
 import check from 'wasm-check';
+// for node.js:
+// const check = require('wasm-check').default;
 
 console.log(check.support()); // default MVP
 console.log(check.support(1)); // same
@@ -41,8 +43,6 @@ console.log(check.supportStreaming);
 
 ```ts
 import check from 'wasm-check';
-// for node.js:
-// const check = require('wasm-check').default;
 
 const features = { ...check.feature };
 console.log(features);
