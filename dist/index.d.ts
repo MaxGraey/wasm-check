@@ -1,17 +1,17 @@
 declare const _default: {
-    support(version?: number): any;
+    support(version?: number): boolean;
     readonly supportStreaming: boolean;
     feature: {
-        readonly bulk: any;
-        readonly exceptions: any;
-        readonly mutableGlobals: any;
-        readonly multiValues: any;
-        readonly saturateConversions: any;
-        readonly signExtensions: any;
-        readonly tailCalls: any;
-        readonly threads: any;
-        readonly simd: any;
-        readonly references: any;
+        readonly bulk: boolean;
+        readonly exceptions: boolean;
+        readonly mutableGlobals: boolean;
+        readonly multiValues: boolean;
+        readonly saturateConversions: boolean;
+        readonly signExtensions: boolean;
+        readonly tailCalls: boolean;
+        readonly threads: boolean;
+        readonly simd: boolean;
+        readonly references: boolean;
     };
 };
 export default _default;

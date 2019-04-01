@@ -37,16 +37,16 @@ export default {
 }
 
 function check(wasm: ArrayBufferView) {
-  return exists && (<any>WebAssembly).validate(wasm);
+  return exists && WebAssembly.validate(wasm);
 }
 
 const exists =
   typeof WebAssembly === 'object' &&
-  typeof (<any>WebAssembly).validate === 'function'
+  typeof WebAssembly.validate === 'function'
 
 const hasStreaming =
-  typeof (<any>WebAssembly).instantiateStreaming === 'function' &&
-  typeof (<any>WebAssembly).compileStreaming === 'function'
+  typeof WebAssembly.instantiateStreaming === 'function' &&
+  typeof WebAssembly.compileStreaming === 'function'
 
 const bulkWasm = Uint32Array.of(
   0x6D736100, 1, 1610679297, 33751040, 50659329, 167837697, 983313, 4259905,
