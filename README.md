@@ -1,5 +1,3 @@
-## WIP
-
 ### About post-MVP WebAssembly features
 
 https://github.com/WebAssembly/design/blob/master/FutureFeatures.md#tracking-issues
