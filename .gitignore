@@ -1,6 +1,6 @@
 node_modules/
 web/
-dist/tsconfig.tsbuildinfo
+lib/tsconfig.tsbuildinfo
 **/.DS_Store
 .idea
 yarn-error.log

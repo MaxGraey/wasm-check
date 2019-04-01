@@ -20,10 +20,10 @@
     "typeRoots": [
       "node_modules/@types"
     ],
-    "outDir": "dist"
+    "outDir": "lib"
   },
   "exclude": [
-    "dist",
+    "lib",
     "tests",
     "web"
   ]

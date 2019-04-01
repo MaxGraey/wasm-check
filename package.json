@@ -9,16 +9,21 @@
     "check",
     "support"
   ],
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "author": "MaxGraey @ 2019",
   "license": "MIT",
+  "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "watch": "tsc -w"
+    "watch": "tsc -w",
+    "prepare" : "yarn build"
   },
   "devDependencies": {
     "@types/webassembly-js-api": "^0.0.2",
     "@types/webassembly-web-api": "^0.0.1",
     "typescript": "^3.4.1"
-  }
+  },
+  "files": [
+    "lib/**/*"
+  ]
 }
