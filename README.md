@@ -19,7 +19,9 @@ yarn add github:MaxGraey/wasm-check
 
 ```ts
 import check from 'wasm-check';
-console.log(check.support(1)); // default MVP
+console.log(check.support()); // default MVP
+console.log(check.support(1)); // same
+console.log(check.support(2)); // version 2 (for future)
 ```
 
 #### Check supporting streaming compilation
