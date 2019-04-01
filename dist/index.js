@@ -1,5 +1,4 @@
 "use strict";
-// /Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --js-flags="--experimental-wasm-eh"
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = {
     support(version = 1) {
@@ -48,13 +47,4 @@ const tailCallsWasm = Uint32Array.of(0x6D736100, 1, 1610679297, 33751040, 101318
 const threadsWasm = Uint32Array.of(0x6D736100, 1, 50398213, 134217985, 1835101700, 66149);
 const simdWasm = Uint8Array.of(0, 97, 115, 109, 1, 0, 0, 0, 1, 6, 1, 96, 1, 123, 1, 123, 3, 2, 1, 0, 10, 10, 1, 8, 0, 32, 0, 32, 0, 253, 44, 11, 0, 13, 4, 110, 97, 109, 101, 2, 6, 1, 0, 1, 0, 1, 48);
 const referencesWasm = Uint8Array.of(0, 97, 115, 109, 1, 0, 0, 0, 1, 5, 1, 96, 1, 111, 0, 3, 2, 1, 0, 4, 4, 1, 111, 0, 1, 10, 10, 1, 8, 0, 65, 0, 32, 0, 38, 0, 11, 0, 12, 4, 110, 97, 109, 101, 2, 5, 1, 0, 1, 0, 0);
-// --experimental-wasm-exceptions
-// console.log(WebAssembly.validate(
-//   Uint32Array.of(
-//     0x6D736100, 0x00000001, 0x60010401, 0x02030000,
-//     0x03050001, 0x0A010001, 0x000F0111, 0x00410041,
-//     0x08FC0041, 0x09FC0000, 0x040B0B00, 0x61010101,
-//     0x6E040A00, 0x02656D61, 0x00000103
-//   )
-// ));
 //# sourceMappingURL=index.js.map

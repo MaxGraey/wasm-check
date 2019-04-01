@@ -1,5 +1,3 @@
-// /Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --js-flags="--experimental-wasm-eh"
-
 export default {
   support(version = 1) {
     return check(Uint32Array.of(0x6D736100, version))
@@ -99,13 +97,3 @@ const referencesWasm = Uint8Array.of(
   0, 4, 4, 1, 111, 0, 1, 10, 10, 1, 8, 0, 65, 0, 32, 0, 38, 0,
   11, 0, 12, 4, 110, 97, 109, 101, 2, 5, 1, 0, 1, 0, 0
 )
-
-// --experimental-wasm-exceptions
-// console.log(WebAssembly.validate(
-//   Uint32Array.of(
-//     0x6D736100, 0x00000001, 0x60010401, 0x02030000,
-//     0x03050001, 0x0A010001, 0x000F0111, 0x00410041,
-//     0x08FC0041, 0x09FC0000, 0x040B0B00, 0x61010101,
-//     0x6E040A00, 0x02656D61, 0x00000103
-//   )
-// ));
