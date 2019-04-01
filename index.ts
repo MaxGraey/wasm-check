@@ -34,6 +34,7 @@ export default {
     // TODO
     // GC
     // Function Refs
+    // BigInt integration
   }
 }
 
