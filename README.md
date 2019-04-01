@@ -58,6 +58,6 @@ or
 
 ```ts
 import check from 'wasm-check';
-console.log(check.simd); // has SIMD support?
-console.log(check.tailCalls); // has tail call optimization support?
+console.log(check.feature.simd); // has SIMD support?
+console.log(check.feature.tailCalls); // has tail call optimization support?
 ```
