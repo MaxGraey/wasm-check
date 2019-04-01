@@ -3,5 +3,4 @@ web/
 dist/tsconfig.tsbuildinfo
 **/.DS_Store
 .idea
-yarn.lock
 yarn-error.log
