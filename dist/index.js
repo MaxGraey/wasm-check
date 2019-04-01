@@ -34,10 +34,10 @@ exports.default = {
 function check(wasm) {
     return exists && WebAssembly.validate(wasm);
 }
-function checkAndRun(wasm, name = '0') {
+function checkAndRun(wasm, name = '0', env = {}) {
     if (check(wasm)) {
         try {
-            new WebAssembly.Instance(wasm, {}).exports[name]();
+            new WebAssembly.Instance(wasm, env).exports[name]();
             return true;
         }
         catch { }

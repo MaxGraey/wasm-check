@@ -40,10 +40,10 @@ function check(wasm: ArrayBufferView) {
   return exists && WebAssembly.validate(wasm);
 }
 
-function checkAndRun(wasm: ArrayBufferView, name: string = '0') {
+function checkAndRun(wasm: ArrayBufferView, name = '0', env = {}) {
   if (check(wasm)) {
     try {
-      new WebAssembly.Instance(wasm, {}).exports[name]()
+      new WebAssembly.Instance(wasm, env).exports[name]()
       return true;
     } catch {}
   }
