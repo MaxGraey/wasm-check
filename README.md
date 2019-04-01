@@ -56,7 +56,7 @@ Output:
   references: false }
 ```
 
-#### Or check concrete feature 
+#### Or check concrete feature
 
 ```ts
 import check from 'wasm-check';
@@ -64,3 +64,9 @@ import check from 'wasm-check';
 console.log(check.feature.simd); // has SIMD support?
 console.log(check.feature.tailCalls); // has tail call optimization support?
 ```
+
+### TODO
+
+- [ ] BigInt integration feature check
+- [ ] GC integration feature check
+- [ ] funcref/closure feature check
