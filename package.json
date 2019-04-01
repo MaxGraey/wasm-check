@@ -1,6 +1,8 @@
 {
   "name": "wasm-check",
   "version": "0.0.1",
+  "author": "MaxGraey @ 2019",
+  "license": "MIT",
   "description": "TypeScript/JavaScript library for checking WebAssembly features for node & browser",
   "keywords": [
     "wasm",
@@ -10,20 +12,18 @@
     "support"
   ],
   "main": "lib/index.js",
-  "author": "MaxGraey @ 2019",
-  "license": "MIT",
   "types": "lib/index.d.ts",
-  "scripts": {
-    "build": "tsc",
-    "watch": "tsc -w",
-    "prepare" : "yarn build"
-  },
+  "files": [
+    "lib/**/*"
+  ],
   "devDependencies": {
     "@types/webassembly-js-api": "^0.0.2",
     "@types/webassembly-web-api": "^0.0.1",
     "typescript": "^3.4.1"
   },
-  "files": [
-    "lib/**/*"
-  ]
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "prepare" : "yarn build"
+  }
 }
