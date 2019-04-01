@@ -29,7 +29,7 @@ import check from 'wasm-check';
 console.log(check.supportStreaming);
 ```
 
-#### Get all features
+#### Get all post-MVP WebAssembly features
 
 ```ts
 import check from 'wasm-check';
