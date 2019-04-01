@@ -13,7 +13,23 @@ Enable some experimental features for Chrome Canary (Mac):
 yarn add github:MaxGraey/wasm-check
 ```
 
-### Usage:
+### Usage
+
+#### Check supported WebAssembly version
+
+```ts
+import check from 'wasm-check';
+console.log(check.support(1)); // default MVP
+```
+
+#### Check supporting streaming compilation
+
+```ts
+import check from 'wasm-check';
+console.log(check.supportStreaming);
+```
+
+#### Get all features
 
 ```ts
 import check from 'wasm-check';
