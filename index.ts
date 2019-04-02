@@ -45,7 +45,7 @@ function checkAndRun(wasm: ArrayBufferView, name = '0', env = {}) {
     try {
       new WebAssembly.Instance(wasm, env).exports[name]()
       return true;
-    } catch {}
+    } catch (e) {}
   }
   return false;
 }
