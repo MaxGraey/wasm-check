@@ -9,6 +9,20 @@ Enable some experimental features for Chrome Canary (Mac):
 /Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --js-flags="--experimental-wasm-eh"
 ```
 
+_More experimental js-flags for v8:_
+
+```
+--experimental-wasm-eh
+--experimental-wasm-mv
+--experimental-wasm-sat-f2i-conversions
+--experimental-wasm-se
+--experimental-wasm-threads
+--experimental-wasm-simd
+--experimental-wasm-anyref
+--experimental-wasm-bulk-memory
+```
+
+
 ### Install
 
 ```
