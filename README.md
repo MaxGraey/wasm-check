@@ -1,3 +1,6 @@
+TypeScript / JavaScript library for detect WebAssembly post-MVP features in node.js & browser
+---
+
 ### About post-MVP WebAssembly features
 
 https://github.com/WebAssembly/design/blob/master/FutureFeatures.md#tracking-issues
