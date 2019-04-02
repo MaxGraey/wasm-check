@@ -26,7 +26,7 @@ export default {
     get signExtensions() { return check(signExtensionsWasm) },
     /** Check support tail call optiminations */
     get tailCalls() { return check(tailCallsWasm) },
-    /** Threads (--experimental-wasm-threads) */
+    /** Check support threads and atomics in WebAssembly (--experimental-wasm-threads) */
     get threads() { return check(threadsWasm) },
     /** Check support SIMD in WebAssembly (--experimental-wasm-simd) */
     get simd() { return check(simdWasm) },

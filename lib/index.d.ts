@@ -20,7 +20,7 @@ declare const _default: {
         readonly signExtensions: boolean;
         /** Check support tail call optiminations */
         readonly tailCalls: boolean;
-        /** Threads (--experimental-wasm-threads) */
+        /** Check support threads and atomics in WebAssembly (--experimental-wasm-threads) */
         readonly threads: boolean;
         /** Check support SIMD in WebAssembly (--experimental-wasm-simd) */
         readonly simd: boolean;
