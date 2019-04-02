@@ -74,3 +74,4 @@ console.log(check.feature.tailCalls); // has tail call optimization support?
 
 - [ ] GC integration feature check
 - [ ] funcref/closure feature check
+- [ ] host binding feature check (?)

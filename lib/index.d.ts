@@ -14,15 +14,15 @@ declare const _default: {
         readonly mutableGlobals: boolean;
         /** Check support multi values (--experimental-wasm-mv) */
         readonly multiValues: boolean;
-        /** Check support non-trapping float-to-int conversions to WebAssembly (--experimental-wasm-sat-f2i-conversions) */
+        /** Check support non-trapping float-to-int conversions (--experimental-wasm-sat-f2i-conversions) */
         readonly saturateConversions: boolean;
         /** Check support zero and sign extensions (--experimental-wasm-se) */
         readonly signExtensions: boolean;
         /** Check support tail call optiminations */
         readonly tailCalls: boolean;
-        /** Check support threads and atomics in WebAssembly (--experimental-wasm-threads) */
+        /** Check support threads and atomics (--experimental-wasm-threads) */
         readonly threads: boolean;
-        /** Check support SIMD in WebAssembly (--experimental-wasm-simd) */
+        /** Check support SIMD (--experimental-wasm-simd) */
         readonly simd: boolean;
         /** Check support basic reference types "anyref" (--experimental-wasm-anyref) */
         readonly references: boolean;
