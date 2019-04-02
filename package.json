@@ -9,7 +9,8 @@
     "webassembly",
     "feature",
     "check",
-    "support"
+    "support",
+    "test"
   ],
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -24,6 +25,6 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "prepare" : "yarn build"
+    "prepublishOnly" : "yarn build"
   }
 }
