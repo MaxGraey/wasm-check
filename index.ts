@@ -1,33 +1,36 @@
 export default {
+  /** Check support WebAssembly version */
   support(version = 1) {
     return check(Uint32Array.of(0x6D736100, version))
   },
 
+  /** Check support streaming compilation and instantiation */
   get supportStreaming() {
     return hasStreaming;
   },
 
   feature: {
+    /** Check support JavaScript BigInt to WebAssembly i64 integration */
     get bigInt() { return checkAndRun(bigIntWasm) },
-    // Bulk memory operations
+    /** Check support bulk memory operations */
     get bulk() { return check(bulkWasm) },
-    // Exception handling (--experimental-wasm-eh)
+    /** Check support exception handling (--experimental-wasm-eh) */
     get exceptions() { return check(exceptionsWasm) },
-    // Mutable globals
+    /** Check support mutable globals */
     get mutableGlobals() { return check(mutableGlobalsWasm) },
-    // Multi values (--experimental-wasm-mv)
+    /** Check support multi values (--experimental-wasm-mv) */
     get multiValues() { return check(multiValuesWasm) },
-    // Non-trapping conversions (--experimental-wasm-sat-f2i-conversions)
+    /** Check support non-trapping float-to-int conversions to WebAssembly (--experimental-wasm-sat-f2i-conversions) */
     get saturateConversions() { return check(saturateConversionsWasm) },
-    // Sign extensions
+    /** Check support zero and sign extensions */
     get signExtensions() { return check(signExtensionsWasm) },
-    // Tail calls
+    /** Check support tail call optiminations */
     get tailCalls() { return check(tailCallsWasm) },
-    // Threads (--experimental-wasm-threads)
+    /** Threads (--experimental-wasm-threads) */
     get threads() { return check(threadsWasm) },
-    // SIMD (--experimental-wasm-simd)
+    /** Check support SIMD in WebAssembly (--experimental-wasm-simd) */
     get simd() { return check(simdWasm) },
-    // Reference types (--experimental-wasm-anyref)
+    /** Check support basic reference types "anyref" (--experimental-wasm-anyref) */
     get references() { return check(referencesWasm) },
 
     // TODO
