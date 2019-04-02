@@ -28,6 +28,10 @@ _More experimental js-flags for v8:_
 ```
 yarn add wasm-check
 ```
+or
+```
+npm install wasm-check
+```
 
 ### Usage
 
