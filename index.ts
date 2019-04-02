@@ -12,17 +12,17 @@ export default {
   feature: {
     /** Check support JavaScript BigInt to WebAssembly i64 integration */
     get bigInt() { return checkAndRun(bigIntWasm) },
-    /** Check support bulk memory operations */
+    /** Check support bulk memory operations (--experimental-wasm-bulk-memory) */
     get bulk() { return check(bulkWasm) },
     /** Check support exception handling (--experimental-wasm-eh) */
     get exceptions() { return check(exceptionsWasm) },
-    /** Check support mutable globals */
+    /** Check support import & export of mutable globals (--experimental-wasm-mut-global) */
     get mutableGlobals() { return check(mutableGlobalsWasm) },
     /** Check support multi values (--experimental-wasm-mv) */
     get multiValues() { return check(multiValuesWasm) },
     /** Check support non-trapping float-to-int conversions to WebAssembly (--experimental-wasm-sat-f2i-conversions) */
     get saturateConversions() { return check(saturateConversionsWasm) },
-    /** Check support zero and sign extensions */
+    /** Check support zero and sign extensions (--experimental-wasm-se) */
     get signExtensions() { return check(signExtensionsWasm) },
     /** Check support tail call optiminations */
     get tailCalls() { return check(tailCallsWasm) },

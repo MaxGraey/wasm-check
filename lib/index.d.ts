@@ -6,17 +6,17 @@ declare const _default: {
     feature: {
         /** Check support JavaScript BigInt to WebAssembly i64 integration */
         readonly bigInt: boolean;
-        /** Check support bulk memory operations */
+        /** Check support bulk memory operations (--experimental-wasm-bulk-memory) */
         readonly bulk: boolean;
         /** Check support exception handling (--experimental-wasm-eh) */
         readonly exceptions: boolean;
-        /** Check support mutable globals */
+        /** Check support import & export of mutable globals (--experimental-wasm-mut-global) */
         readonly mutableGlobals: boolean;
         /** Check support multi values (--experimental-wasm-mv) */
         readonly multiValues: boolean;
         /** Check support non-trapping float-to-int conversions to WebAssembly (--experimental-wasm-sat-f2i-conversions) */
         readonly saturateConversions: boolean;
-        /** Check support zero and sign extensions */
+        /** Check support zero and sign extensions (--experimental-wasm-se) */
         readonly signExtensions: boolean;
         /** Check support tail call optiminations */
         readonly tailCalls: boolean;
