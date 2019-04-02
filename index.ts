@@ -45,7 +45,9 @@ function check(wasm: ArrayBufferView) {
 function checkAndRun(wasm: ArrayBufferView, name = '0', env = {}) {
   if (check(wasm)) {
     try {
-      new WebAssembly.Instance(wasm, env).exports[name]()
+      new WebAssembly.Instance(
+        new WebAssembly.Module(wasm), env
+      ).exports[name]()
       return true;
     } catch (e) {}
   }
