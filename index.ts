@@ -5,9 +5,7 @@ export default {
   },
 
   /** Check support streaming compilation and instantiation */
-  get supportStreaming() {
-    return hasStreaming;
-  },
+  get supportStreaming() { return hasStreaming },
 
   feature: {
     /** Check support JavaScript BigInt to WebAssembly i64 integration */
