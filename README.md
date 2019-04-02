@@ -26,7 +26,7 @@ _More experimental js-flags for v8:_
 ### Install
 
 ```
-yarn add github:MaxGraey/wasm-check
+yarn add wasm-check
 ```
 
 ### Usage
