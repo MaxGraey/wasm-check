@@ -40,20 +40,33 @@ export default {
 }
 
 function check(wasm: ArrayBufferView) {
-  return exists && WebAssembly.validate(wasm);
+  if (!exists) return false
+  let ok = cache.get(wasm)
+  if (ok == null) {
+    ok = WebAssembly.validate(wasm)
+    cache.set(wasm, ok)
+  }
+  return ok as boolean
 }
 
 function checkAndRun(wasm: ArrayBufferView, name = '0', env = {}) {
-  if (check(wasm)) {
-    try {
-      new WebAssembly.Instance(
-        new WebAssembly.Module(wasm), env
-      ).exports[name]()
-      return true;
-    } catch (e) {}
+  if (!exists) return false
+  let ok = cache.get(wasm)
+  if (ok == null) {
+    ok = WebAssembly.validate(wasm)
+    if (ok) {
+      try {
+        new WebAssembly.Instance(
+          new WebAssembly.Module(wasm), env
+        ).exports[name]()
+      } catch (e) { ok = false }
+    }
+    cache.set(wasm, ok)
   }
-  return false;
+  return ok as boolean
 }
+
+let cache = new WeakMap();
 
 const exists =
   typeof WebAssembly === 'object' &&
