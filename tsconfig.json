@@ -20,7 +20,7 @@
   },
   "exclude": [
     "lib",
-    /* "tests", */
+    "tests",
     "web"
   ]
 }
