@@ -31,10 +31,11 @@ export default {
     /** Check support basic reference types "anyref" (--experimental-wasm-anyref) */
     get references() { return check(referencesWasm) },
 
-    // TODO
-    // GC
-    // Function Refs
-    // Host binding
+    /* TODO
+     * - GC
+     * - Function Refs
+     * - Host binding ?
+     */
   }
 }
 
