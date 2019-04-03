@@ -46,7 +46,7 @@ function check(wasm: ArrayBufferView) {
     ok = WebAssembly.validate(wasm)
     cache.set(wasm, ok)
   }
-  return ok as boolean
+  return ok
 }
 
 function checkAndRun(wasm: ArrayBufferView, name = '0', env = {}) {
@@ -63,10 +63,10 @@ function checkAndRun(wasm: ArrayBufferView, name = '0', env = {}) {
     }
     cache.set(wasm, ok)
   }
-  return ok as boolean
+  return ok
 }
 
-let cache = new WeakMap();
+let cache = new WeakMap<ArrayBufferView, boolean>();
 
 const exists =
   typeof WebAssembly === 'object' &&
