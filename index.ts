@@ -22,7 +22,7 @@ export default {
     get saturateConversions() { return check(saturateConversionsWasm) },
     /** Check support zero and sign extensions (--experimental-wasm-se) */
     get signExtensions() { return check(signExtensionsWasm) },
-    /** Check support tail call optiminations */
+    /** Check support tail call optiminations (--experimental-wasm-return-call) */
     get tailCalls() { return check(tailCallsWasm) },
     /** Check support threads and atomics (--experimental-wasm-threads) */
     get threads() { return check(threadsWasm) },

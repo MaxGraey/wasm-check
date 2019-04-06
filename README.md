@@ -23,6 +23,7 @@ _More experimental js-flags for v8:_
 --experimental-wasm-simd
 --experimental-wasm-anyref
 --experimental-wasm-bulk-memory
+--experimental-wasm-return-call
 ```
 
 
