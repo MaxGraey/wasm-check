@@ -2,10 +2,15 @@
 # yarn lockfile v1
 
 
-"@types/webassembly-js-api@*", "@types/webassembly-js-api@^0.0.2":
+"@types/webassembly-js-api@*":
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/@types/webassembly-js-api/-/webassembly-js-api-0.0.2.tgz#43a04bd75fa20332133c6c3986156bfeb4a3ced7"
   integrity sha512-htlxJRag6RUiMYUkS8Fjup+TMHO0VarpiF9MrqYaGJ0wXtIraQFz40rfA8VIeCiWy8sgpv3RLmigpgicG8fqGA==
+
+"@types/webassembly-js-api@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@types/webassembly-js-api/-/webassembly-js-api-0.0.3.tgz#c659516363288a3859465787ca91bd53d755a883"
+  integrity sha512-9c8QN9vJKF8PYeMeh459PbCfNJVF7rJN9F7AAv7zrLvkmFC8/9OhUTEDZnFl8JzyHDArqbEWaNh72EpmzBKo9Q==
 
 "@types/webassembly-web-api@^0.0.1":
   version "0.0.1"
@@ -14,7 +19,7 @@
   dependencies:
     "@types/webassembly-js-api" "*"
 
-typescript@^3.4.1:
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.4.1.tgz#b6691be11a881ffa9a05765a205cb7383f3b63c6"
-  integrity sha512-3NSMb2VzDQm8oBTLH6Nj55VVtUEpe/rgkIzMir0qVoLyjDZlnMBva0U6vDiV3IH+sl/Yu6oP5QwsAQtHPmDd2Q==
+typescript@^3.4.2:
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.4.2.tgz#9ed4e6475d906f589200193be056f5913caed481"
+  integrity sha512-Og2Vn6Mk7JAuWA1hQdDQN/Ekm/SchX80VzLhjKN9ETYrIepBFAd8PkOdOTK2nKt0FCkmMZKBJvQ1dV1gIxPu/A==
