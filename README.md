@@ -80,7 +80,8 @@ Output:
   tailCalls: false,
   threads: false,
   simd: false,
-  references: false }
+  references: false,
+  functionReferences: false }
 ```
 
 #### Or check concrete feature
@@ -95,5 +96,4 @@ console.log(check.feature.tailCalls); // has tail call optimization support?
 ### TODO
 
 - [ ] GC integration feature check
-- [ ] funcref/closure feature check
-- [ ] host binding feature check (?)
+- [ ] Web IDL Bindings (host binding) feature check (?)

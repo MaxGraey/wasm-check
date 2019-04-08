@@ -18,7 +18,7 @@ declare const _default: {
         readonly saturateConversions: boolean;
         /** Check support zero and sign extensions (--experimental-wasm-se) */
         readonly signExtensions: boolean;
-        /** Check support tail call optiminations */
+        /** Check support tail call optiminations (--experimental-wasm-return-call) */
         readonly tailCalls: boolean;
         /** Check support threads and atomics (--experimental-wasm-threads) */
         readonly threads: boolean;
@@ -26,6 +26,8 @@ declare const _default: {
         readonly simd: boolean;
         /** Check support basic reference types "anyref" (--experimental-wasm-anyref) */
         readonly references: boolean;
+        /** Check support typed function references and closures (pre-proposal) */
+        readonly functionReferences: boolean;
     };
 };
 export default _default;
