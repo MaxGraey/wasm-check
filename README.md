@@ -34,7 +34,7 @@ yarn add wasm-check
 ```
 or
 ```
-npm install wasm-check
+npm i wasm-check
 ```
 
 ### Usage

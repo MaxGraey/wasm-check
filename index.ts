@@ -49,7 +49,7 @@ function check(wasm: ArrayBufferView) {
   return ok
 }
 
-function checkAndRun(wasm: ArrayBufferView, name = '0', env = {}) {
+function checkAndRun(wasm: ArrayBufferView, name = '0', env = {} as object) {
   if (!exists) return false
   let ok = cache.get(wasm)
   if (ok == null) {
