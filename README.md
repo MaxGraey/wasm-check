@@ -17,15 +17,15 @@ Enable some experimental features for Chrome Canary (Mac):
 _More experimental js-flags for v8:_
 
 ```
---experimental-wasm-eh
---experimental-wasm-mv
---experimental-wasm-sat-f2i-conversions
---experimental-wasm-se
---experimental-wasm-threads
---experimental-wasm-simd
 --experimental-wasm-anyref
 --experimental-wasm-bulk-memory
+--experimental-wasm-eh
+--experimental-wasm-mv
 --experimental-wasm-return-call
+--experimental-wasm-sat-f2i-conversions
+--experimental-wasm-se
+--experimental-wasm-simd
+--experimental-wasm-threads
 ```
 
 
