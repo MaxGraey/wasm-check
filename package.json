@@ -24,14 +24,14 @@
     "type": "git",
     "url": "git+https://github.com/MaxGraey/wasm-check.git"
   },
-  "engineStrict" : true,
+  "engineStrict": true,
   "engines": {
     "node": ">= 8"
   },
   "devDependencies": {
     "@types/webassembly-js-api": "^0.0.3",
     "@types/webassembly-web-api": "^0.0.1",
-    "typescript": "^3.4.2"
+    "typescript": "^3.4.3"
   },
   "scripts": {
     "build": "tsc",
