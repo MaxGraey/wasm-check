@@ -72,12 +72,8 @@ const exists =
   typeof WebAssembly === 'object' &&
   typeof WebAssembly.validate === 'function'
 
-const hasStreaming = exists &&
-  typeof WebAssembly.instantiateStreaming === 'function' &&
-  typeof WebAssembly.compileStreaming === 'function'
-
-const hasFunctionRef = exists &&
-  typeof (<any>WebAssembly).Function === 'function'
+const hasStreaming   = exists && typeof WebAssembly.instantiateStreaming === 'function'
+const hasFunctionRef = exists && typeof (<any>WebAssembly).Function === 'function'
 
 const bigIntWasm = Uint32Array.of(
   0x6D736100, 1, 1610679553, 58589440, 117440770, 805372165, 101318656,
