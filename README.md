@@ -18,6 +18,7 @@ _More experimental js-flags for v8:_
 
 ```
 --experimental-wasm-anyref
+--experimental-wasm-bigint
 --experimental-wasm-bulk-memory
 --experimental-wasm-eh
 --experimental-wasm-mv
