@@ -4,7 +4,7 @@ declare const _default: {
     /** Check support streaming compilation and instantiation */
     readonly supportStreaming: boolean;
     feature: {
-        /** Check support JavaScript BigInt to WebAssembly i64 integration */
+        /** Check support JavaScript BigInt to WebAssembly i64 integration (--experimental-wasm-bigint) */
         readonly bigInt: boolean;
         /** Check support bulk memory operations (--experimental-wasm-bulk-memory) */
         readonly bulk: boolean;

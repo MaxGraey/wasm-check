@@ -8,7 +8,7 @@ export default {
   get supportStreaming() { return hasStreaming },
 
   feature: {
-    /** Check support JavaScript BigInt to WebAssembly i64 integration */
+    /** Check support JavaScript BigInt to WebAssembly i64 integration (--experimental-wasm-bigint) */
     get bigInt() { return checkAndRun(bigIntWasm) },
     /** Check support bulk memory operations (--experimental-wasm-bulk-memory) */
     get bulk() { return check(bulkWasm) },
