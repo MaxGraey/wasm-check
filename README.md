@@ -45,7 +45,7 @@ npm i wasm-check
 #### Check supported WebAssembly version
 
 ```ts
-import check from 'wasm-check';
+import * as check from 'wasm-check';
 // or
 // const check = require('wasm-check');
 
@@ -57,7 +57,7 @@ console.log(check.support(2)); // version 2 (for future)
 #### Check supporting streaming compilation
 
 ```ts
-import check from 'wasm-check';
+import * as check from 'wasm-check';
 
 console.log(check.supportStreaming);
 ```
@@ -65,7 +65,7 @@ console.log(check.supportStreaming);
 #### Get all post-MVP WebAssembly features
 
 ```ts
-import check from 'wasm-check';
+import * as check from 'wasm-check';
 
 const features = { ...check.feature };
 console.log(features);
@@ -90,7 +90,7 @@ Output:
 #### Or check concrete feature
 
 ```ts
-import check from 'wasm-check';
+import * as check from 'wasm-check';
 
 console.log(check.feature.simd); // has SIMD support?
 console.log(check.feature.tailCalls); // has tail call optimization support?
