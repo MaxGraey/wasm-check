@@ -46,8 +46,8 @@ npm i wasm-check
 
 ```ts
 import check from 'wasm-check';
-// or for node.js (without babel or typescript):
-// const check = require('wasm-check').default;
+// or
+// const check = require('wasm-check');
 
 console.log(check.support()); // default MVP
 console.log(check.support(1)); // same

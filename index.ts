@@ -1,4 +1,4 @@
-export default {
+export = {
   /** Check support WebAssembly version */
   support(version = 1) {
     return check(Uint32Array.of(0x6D736100, version))

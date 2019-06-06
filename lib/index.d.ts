@@ -30,4 +30,4 @@ declare const _default: {
         readonly functionReferences: boolean;
     };
 };
-export default _default;
+export = _default;
