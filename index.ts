@@ -41,32 +41,34 @@ export = {
 
 function check(wasm: ArrayBufferView) {
   if (!exists) return false
-  let ok = cache.get(wasm)
+  const buffer = wasm.buffer as ArrayBuffer
+  let ok = cache.get(buffer)
   if (ok == null) {
-    ok = WebAssembly.validate(wasm)
-    cache.set(wasm, ok)
+    ok = WebAssembly.validate(buffer)
+    cache.set(buffer, ok)
   }
   return ok
 }
 
 function checkAndRun(wasm: ArrayBufferView, name = '0', env = {} as object) {
   if (!exists) return false
-  let ok = cache.get(wasm)
+  const buffer = wasm.buffer as ArrayBuffer
+  let ok = cache.get(buffer)
   if (ok == null) {
-    ok = WebAssembly.validate(wasm)
+    ok = WebAssembly.validate(buffer)
     if (ok) {
       try {
         new WebAssembly.Instance(
-          new WebAssembly.Module(wasm), env
+          new WebAssembly.Module(buffer), env
         ).exports[name]()
       } catch (e) { ok = false }
     }
-    cache.set(wasm, ok)
+    cache.set(buffer, ok)
   }
   return ok
 }
 
-let cache = new WeakMap<ArrayBufferView, boolean>()
+let cache = new WeakMap<ArrayBuffer, boolean>()
 
 const exists =
   typeof WebAssembly === 'object' &&
