@@ -2,24 +2,7 @@
 # yarn lockfile v1
 
 
-"@types/webassembly-js-api@*":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@types/webassembly-js-api/-/webassembly-js-api-0.0.2.tgz#43a04bd75fa20332133c6c3986156bfeb4a3ced7"
-  integrity sha512-htlxJRag6RUiMYUkS8Fjup+TMHO0VarpiF9MrqYaGJ0wXtIraQFz40rfA8VIeCiWy8sgpv3RLmigpgicG8fqGA==
-
-"@types/webassembly-js-api@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@types/webassembly-js-api/-/webassembly-js-api-0.0.3.tgz#c659516363288a3859465787ca91bd53d755a883"
-  integrity sha512-9c8QN9vJKF8PYeMeh459PbCfNJVF7rJN9F7AAv7zrLvkmFC8/9OhUTEDZnFl8JzyHDArqbEWaNh72EpmzBKo9Q==
-
-"@types/webassembly-web-api@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@types/webassembly-web-api/-/webassembly-web-api-0.0.1.tgz#4affed91f23c8cdeef8d1c6a5a3a5b603d693d5c"
-  integrity sha512-fX3rNlS0+dH73ccQNcCVwZADw1FZwHObSm4Blg60q6uO5HLcWTVLRHoplHodJGWxK8IbdPFMPAE52UJ7BOBWfg==
-  dependencies:
-    "@types/webassembly-js-api" "*"
-
-typescript@^3.6.2:
-  version "3.6.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.6.3.tgz#fea942fabb20f7e1ca7164ff626f1a9f3f70b4da"
-  integrity sha512-N7bceJL1CtRQ2RiG0AQME13ksR7DiuQh/QehubYcghzv20tnh+MQnQIuJddTmsbqYj+dztchykemz0zFzlvdQw==
+typescript@^3.7.0-beta:
+  version "3.7.0-beta"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.7.0-beta.tgz#4ad556e0eee14b90ecc39261001690e16e5eeba9"
+  integrity sha512-4jyCX+IQamrPJxgkABPq9xf+hUN+GWHVxoj+oey1TadCPa4snQl1RKwUba+1dyzYCamwlCxKvZQ3TjyWLhMGBA==
