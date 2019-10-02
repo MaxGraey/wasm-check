@@ -1,6 +1,6 @@
 [![NPM registry](https://img.shields.io/npm/v/wasm-check.svg?style=for-the-badge)](https://www.npmjs.com/package/wasm-check)[![NPM license](https://img.shields.io/badge/license-mit-green.svg?style=for-the-badge)](LICENSE.md)
 
-TypeScript / JavaScript library for detect WebAssembly post-MVP features in node.js & browser
+TypeScript / JavaScript library for detect WebAssembly post-MVP features in node.js & browser. Small and with zero dependencies.
 ---
 
 ### About post-MVP WebAssembly features
