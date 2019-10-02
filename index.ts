@@ -45,9 +45,9 @@ function check(wasm: ArrayBufferView) {
   let ok = cache.get(buffer)
   if (ok == null) {
     ok = WebAssembly.validate(buffer)
-    cache.set(buffer, ok)
+    cache.set(buffer, ok!)
   }
-  return ok
+  return ok!
 }
 
 function checkAndRun(wasm: ArrayBufferView, name = '0', env = {} as object) {
@@ -58,14 +58,14 @@ function checkAndRun(wasm: ArrayBufferView, name = '0', env = {} as object) {
     ok = WebAssembly.validate(buffer)
     if (ok) {
       try {
-        new WebAssembly.Instance(
+        (new WebAssembly.Instance(
           new WebAssembly.Module(buffer), env
-        ).exports[name]()
+        ).exports[name] as Function)()
       } catch (e) { ok = false }
     }
-    cache.set(buffer, ok)
+    cache.set(buffer, ok!)
   }
-  return ok
+  return ok!
 }
 
 let cache = new WeakMap<ArrayBuffer, boolean>()
