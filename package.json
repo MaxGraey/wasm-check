@@ -1,6 +1,6 @@
 {
   "name": "wasm-check",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "author": "MaxGraey @ 2019",
   "license": "MIT",
   "description": "TypeScript / JavaScript library for detect WebAssembly features in node.js & browser",
@@ -20,7 +20,9 @@
   "jsdelivr": "dist/wasm-check.min.js",
   "unpkg": "dist/wasm-check.min.js",
   "files": [
-    "lib/**/*"
+    "lib/**/*",
+    "LICENSE",
+    "package.json"
   ],
   "bugs": "https://github.com/MaxGraey/wasm-check/issues",
   "repository": {
