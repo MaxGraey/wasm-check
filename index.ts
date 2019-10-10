@@ -30,6 +30,8 @@ export = {
     get simd() { return check(simdWasm) },
     /** Check support basic reference types "anyref" (--experimental-wasm-anyref) */
     get references() { return check(referencesWasm) },
+    /** Check support Type Reflection (--experimental-wasm-type-reflection) */
+    get typeReflection() { return hasTypeReflection },
     /** Check support typed function references and closures (pre-proposal) */
     get functionReferences() { return hasFunctionRef },
     /* TODO
@@ -74,8 +76,9 @@ const exists =
   typeof WebAssembly === 'object' &&
   typeof WebAssembly.validate === 'function'
 
-const hasStreaming   = exists && typeof WebAssembly.instantiateStreaming === 'function'
-const hasFunctionRef = exists && typeof (<any>WebAssembly).Function === 'function'
+const hasStreaming      = exists && typeof WebAssembly.instantiateStreaming === 'function'
+const hasFunctionRef    = exists && typeof (<any>WebAssembly).Function === 'function'
+const hasTypeReflection = exists && typeof (<any>WebAssembly.Memory).type === 'function'
 
 const bigIntWasm = Uint32Array.of(
   0x6D736100, 1, 1610679553, 58589440, 117440770, 805372165, 101318656,

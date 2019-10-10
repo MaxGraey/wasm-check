@@ -14,20 +14,19 @@ Enable some experimental features for Chrome Canary (Mac):
 /Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --js-flags="--experimental-wasm-eh"
 ```
 
-_More experimental js-flags for v8:_
+### Support detections
 
-```
---experimental-wasm-anyref
---experimental-wasm-bigint
---experimental-wasm-bulk-memory
---experimental-wasm-eh
---experimental-wasm-mv
---experimental-wasm-return-call
---experimental-wasm-sat-f2i-conversions
---experimental-wasm-se
---experimental-wasm-simd
---experimental-wasm-threads
-```
+- [x] Reference types _(--experimental-wasm-anyref)_
+- [x] BigInt between js and wasm _(--experimental-wasm-bigint)_
+- [x] Bulk memory operations _(--experimental-wasm-bulk-memory)_
+- [x] Exceptions _(--experimental-wasm-eh)_
+- [x] Multi values _(--experimental-wasm-mv)_
+- [x] Recursive calls _(--experimental-wasm-return-call)_
+- [x] Saturated conversions between float and integers _(--experimental-wasm-sat-f2i-conversions)_
+- [x] Sign/zero extensions _(--experimental-wasm-se)_
+- [x] SIMD _(--experimental-wasm-simd)_
+- [x] Threads _(--experimental-wasm-threads)_
+- [x] Type reflection _(--experimental-wasm-type-reflection)_
 
 
 ### Install
@@ -84,6 +83,7 @@ Output:
   threads: false,
   simd: false,
   references: false,
+  typeReflection: false,
   functionReferences: false }
 ```
 

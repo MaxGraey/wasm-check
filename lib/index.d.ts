@@ -26,6 +26,8 @@ declare const _default: {
         readonly simd: boolean;
         /** Check support basic reference types "anyref" (--experimental-wasm-anyref) */
         readonly references: boolean;
+        /** Check support Type Reflection (--experimental-wasm-type-reflection) */
+        readonly typeReflection: boolean;
         /** Check support typed function references and closures (pre-proposal) */
         readonly functionReferences: boolean;
     };
