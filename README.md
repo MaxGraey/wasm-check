@@ -73,7 +73,7 @@ console.log(features);
 Output:
 ```js
 { bigInt: false,
-  bulk: false,
+  bulk: true,
   exceptions: false,
   mutableGlobals: true,
   multiValues: false,
