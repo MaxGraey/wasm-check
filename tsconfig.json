@@ -20,7 +20,8 @@
     "baseUrl": "./",
     "lib": [
       "DOM",
-      "ES2018"
+      "ES2018",
+      "esnext.bigint"
     ],
     "outDir": "lib"
   },

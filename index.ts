@@ -9,7 +9,7 @@ export = {
 
   feature: {
     /** Check support JavaScript BigInt to WebAssembly i64 integration (--experimental-wasm-bigint) */
-    get bigInt() { return checkAndRun(bigIntWasm) },
+    get bigInt() { return hasBigIntJS && checkAndRun(bigIntWasm) },
     /** Check support bulk memory operations (--experimental-wasm-bulk-memory) */
     get bulk() { return check(bulkWasm) },
     /** Check support exception handling (--experimental-wasm-eh) */
@@ -76,6 +76,7 @@ const exists =
   typeof WebAssembly === 'object' &&
   typeof WebAssembly.validate === 'function'
 
+const hasBigIntJS       = typeof BigInt === 'function' && typeof BigInt64Array === 'function'
 const hasStreaming      = exists && typeof WebAssembly.instantiateStreaming === 'function'
 const hasFunctionRef    = exists && typeof (<any>WebAssembly).Function === 'function'
 const hasTypeReflection = exists && typeof (<any>WebAssembly.Memory).type === 'function'
