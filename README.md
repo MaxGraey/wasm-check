@@ -14,19 +14,19 @@ Enable some experimental features for Chrome Canary (Mac):
 /Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --js-flags="--experimental-wasm-eh"
 ```
 
-### Support detections
+### Support feature detections
 
-- [x] Reference types _(--experimental-wasm-anyref)_
-- [x] BigInt between js and wasm _(--experimental-wasm-bigint)_
-- [x] Bulk memory operations _(--experimental-wasm-bulk-memory)_
-- [x] Exceptions _(--experimental-wasm-eh)_
-- [x] Multi values _(--experimental-wasm-mv)_
-- [x] Recursive calls _(--experimental-wasm-return-call)_
-- [x] Saturated conversions between float and integers _(--experimental-wasm-sat-f2i-conversions)_
-- [x] Sign/zero extensions _(--experimental-wasm-se)_
-- [x] SIMD _(--experimental-wasm-simd)_
-- [x] Threads _(--experimental-wasm-threads)_
-- [x] Type reflection _(--experimental-wasm-type-reflection)_
+- [x] [Reference types](https://github.com/WebAssembly/reference-types) _(--experimental-wasm-anyref)_
+- [x] [BigInt between js and wasm](https://github.com/WebAssembly/JS-BigInt-integration) _(--experimental-wasm-bigint)_
+- [x] [Bulk memory operations](https://github.com/webassembly/bulk-memory-operations) _(--experimental-wasm-bulk-memory)_
+- [x] [Exceptions](https://github.com/WebAssembly/exception-handling) _(--experimental-wasm-eh)_
+- [x] [Multi values](https://github.com/WebAssembly/multi-value) _(--experimental-wasm-mv)_
+- [x] [Tail recursion calls](https://github.com/webassembly/tail-call) _(--experimental-wasm-return-call)_
+- [x] [Saturated (non-trapping) conversions from float to int](https://github.com/WebAssembly/nontrapping-float-to-int-conversions) _(--experimental-wasm-sat-f2i-conversions)_
+- [x] [Sign/zero extensions](https://github.com/WebAssembly/sign-extension-ops) _(--experimental-wasm-se)_
+- [x] [SIMD](https://github.com/webassembly/simd) _(--experimental-wasm-simd)_
+- [x] [Threads](https://github.com/webassembly/threads) _(--experimental-wasm-threads)_
+- [x] [Type reflection](https://github.com/WebAssembly/js-types) _(--experimental-wasm-type-reflection)_
 
 
 ### Install
