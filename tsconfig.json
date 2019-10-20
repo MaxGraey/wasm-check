@@ -19,8 +19,8 @@
     "declaration": true,
     "baseUrl": "./",
     "lib": [
-      "DOM",
-      "ES2018",
+      "dom",
+      "es2018",
       "esnext.bigint"
     ],
     "outDir": "lib"

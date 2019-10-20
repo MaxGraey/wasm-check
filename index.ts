@@ -76,8 +76,8 @@ const exists =
   typeof WebAssembly === 'object' &&
   typeof WebAssembly.validate === 'function'
 
-const hasBigIntJS       = typeof BigInt === 'function' && typeof BigInt64Array === 'function'
-const hasStreaming      = exists && typeof WebAssembly.instantiateStreaming === 'function'
+const hasBigIntJS       = typeof BigInt64Array === 'function'
+const hasStreaming      = exists && typeof (<any>WebAssembly).instantiateStreaming === 'function'
 const hasFunctionRef    = exists && typeof (<any>WebAssembly).Function === 'function'
 const hasTypeReflection = exists && typeof (<any>WebAssembly.Memory).type === 'function'
 
