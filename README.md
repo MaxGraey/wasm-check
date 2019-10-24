@@ -1,9 +1,9 @@
 [![NPM registry](https://img.shields.io/npm/v/wasm-check.svg?style=for-the-badge)](https://www.npmjs.com/package/wasm-check)[![NPM license](https://img.shields.io/badge/license-mit-green.svg?style=for-the-badge)](LICENSE.md)
 
-TypeScript / JavaScript library for detect WebAssembly post-MVP features in node.js & browser. Small and with zero dependencies.
+Library for detect WebAssembly post-MVP features in NodeJS & Browser. Small and with zero dependencies.
 ---
 
-### About post-MVP WebAssembly features
+## About post-MVP WebAssembly features
 
 https://github.com/WebAssembly/design/blob/master/FutureFeatures.md#tracking-issues
 
@@ -14,7 +14,7 @@ Enable some experimental features for Chrome Canary (Mac):
 /Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --js-flags="--experimental-wasm-eh"
 ```
 
-### Support feature detections
+## Support feature detections
 
 - [x] [Reference types](https://github.com/WebAssembly/reference-types) _(--experimental-wasm-anyref)_
 - [x] [BigInt between js and wasm](https://github.com/WebAssembly/JS-BigInt-integration) _(--experimental-wasm-bigint)_
@@ -29,7 +29,7 @@ Enable some experimental features for Chrome Canary (Mac):
 - [x] [Type reflection](https://github.com/WebAssembly/js-types) _(--experimental-wasm-type-reflection)_
 
 
-### Install
+## Install
 
 ```
 yarn add wasm-check
@@ -39,7 +39,7 @@ or
 npm i wasm-check
 ```
 
-### Usage
+## Usage
 
 #### Check supported WebAssembly version
 
@@ -96,7 +96,7 @@ console.log(check.feature.simd); // has SIMD support?
 console.log(check.feature.tailCalls); // has tail call optimization support?
 ```
 
-### TODO
+#### TODO
 
 - [ ] GC integration feature check
-- [ ] Web IDL Bindings (host binding) feature check (?)
+- [ ] Interface Types feature check
