@@ -42,28 +42,26 @@ export = {
 }
 
 function check(wasm: ArrayBufferView) {
-  if (!exists) return false
-  const buffer = wasm.buffer as ArrayBuffer
-  let ok = cache.get(buffer)
-  if (ok == null) {
-    ok = WebAssembly.validate(buffer)
-    cache.set(buffer, ok!)
-  }
-  return ok!
+  return checkAndRun(wasm, false);
 }
 
-function checkAndRun(wasm: ArrayBufferView, name = '0', env = {} as object) {
+function checkAndRun(
+  wasm: ArrayBufferView,
+  exec = true,
+  name = '0',
+  env  = {} as Record<string, Record<string, any>>
+) {
   if (!exists) return false
   const buffer = wasm.buffer as ArrayBuffer
   let ok = cache.get(buffer)
   if (ok == null) {
     ok = WebAssembly.validate(buffer)
-    if (ok) {
+    if (ok && exec) {
       try {
         (new WebAssembly.Instance(
           new WebAssembly.Module(buffer), env
         ).exports[name] as Function)()
-      } catch (e) { ok = false }
+      } catch { ok = false }
     }
     cache.set(buffer, ok!)
   }
