@@ -39,7 +39,7 @@
     "typescript": "^3.7.2"
   },
   "scripts": {
-    "build": "tsc && terser lib/index.js -c -m -o dist/wasm-check.min.js --source-map",
+    "build": "tsc && terser lib/index.js -c -m --toplevel -o dist/wasm-check.min.js --source-map",
     "watch": "tsc -w",
     "prepublishOnly": "yarn build"
   }
