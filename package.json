@@ -35,8 +35,8 @@
     "node": ">= 8"
   },
   "devDependencies": {
-    "terser": "^4.4.0",
-    "typescript": "^3.7.2"
+    "terser": "^4.4.2",
+    "typescript": "^3.7.3"
   },
   "scripts": {
     "build": "tsc && terser lib/index.js -c -m --toplevel -o dist/wasm-check.min.js --source-map \"content='./lib/index.js.map'\"",
