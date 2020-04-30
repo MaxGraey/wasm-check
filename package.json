@@ -1,7 +1,7 @@
 {
   "name": "wasm-check",
-  "version": "1.4.3",
-  "author": "MaxGraey @ 2019",
+  "version": "1.4.4",
+  "author": "MaxGraey @ 2020",
   "license": "MIT",
   "description": "TypeScript / JavaScript library for detect WebAssembly features in node.js & browser",
   "keywords": [
@@ -35,8 +35,8 @@
     "node": ">= 8"
   },
   "devDependencies": {
-    "terser": "^4.6.2",
-    "typescript": "^3.7.4"
+    "terser": "^4.6.13",
+    "typescript": "^3.8.3"
   },
   "scripts": {
     "build": "tsc && terser lib/index.js -c -m --toplevel -o dist/wasm-check.min.js --source-map \"content='./lib/index.js.map'\"",
