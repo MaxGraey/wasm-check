@@ -41,10 +41,6 @@ export = {
   }
 }
 
-function check(wasm: ArrayBufferView) {
-  return checkAndRun(wasm, false);
-}
-
 function checkAndRun(
   wasm: ArrayBufferView,
   exec = true,
@@ -74,6 +70,7 @@ const u32 = Uint32Array.of
 
 const exists = typeof WebAssembly === 'object'
 const has = (x: unknown) => exists && typeof x === 'function'
+const check = (wasm: ArrayBufferView) => checkAndRun(wasm, false)
 
 const hasBigIntJS       = has(BigInt64Array)
 const hasStreaming      = has(WebAssembly.instantiateStreaming)
