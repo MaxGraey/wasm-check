@@ -25,7 +25,7 @@ export = {
     /** Check support tail call optiminations (--experimental-wasm-return-call) */
     get tailCalls() { return check(tailCallsWasm) },
     /** Check support threads and atomics (--experimental-wasm-threads) */
-    get threads() { return check(threadsWasm) },
+    get threads() { return hasSAB && check(threadsWasm) },
     /** Check support SIMD (--experimental-wasm-simd) */
     get simd() { return check(simdWasm) },
     /** Check support basic reference types "anyref" (--experimental-wasm-anyref) */
@@ -75,9 +75,10 @@ const exists =
   typeof WebAssembly.validate === 'function'
 
 const hasBigIntJS       = typeof BigInt64Array === 'function'
-const hasStreaming      = exists && typeof (<any>WebAssembly).instantiateStreaming === 'function'
+const hasStreaming      = exists && typeof WebAssembly.instantiateStreaming === 'function'
 const hasFunctionRef    = exists && typeof (<any>WebAssembly).Function === 'function'
 const hasTypeReflection = exists && typeof (<any>WebAssembly.Memory).type === 'function'
+const hasSAB            = exists && typeof SharedArrayBuffer === 'function'
 
 const bigIntWasm = Uint32Array.of(
   0x6D736100, 1, 1610679553, 58589440, 117440770, 805372165, 101318656,
@@ -118,8 +119,10 @@ const tailCallsWasm = Uint32Array.of(
   1835101700, 17039717, 40239360, 259
 )
 
-const threadsWasm = Uint32Array.of(
-  0x6D736100, 1, 50398213, 134217985, 1835101700, 66149
+const threadsWasm = Uint8Array.of(
+  0, 97, 115, 109, 1, 0, 0, 0, 1, 4, 1, 96, 0, 0, 3, 2, 1, 0, 5, 4, 1,
+  3, 1, 1, 10, 7, 1, 5, 0, 254, 3, 0, 11, 0, 10, 4, 110, 97, 109, 101,
+  2, 3, 1, 0, 0
 )
 
 const simdWasm = Uint32Array.of(
