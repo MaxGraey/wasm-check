@@ -9,7 +9,7 @@ export = {
 
   feature: {
     /** Check support JavaScript BigInt to WebAssembly i64 integration (--experimental-wasm-bigint) */
-    get bigInt() { return hasBigIntJS && checkAndRun(bigIntWasm) },
+    get bigInt() { return checkAndRun(bigIntWasm) },
     /** Check support bulk memory operations (--experimental-wasm-bulk-memory) */
     get bulk() { return check(bulkWasm) },
     /** Check support exception handling (--experimental-wasm-eh) */
@@ -25,7 +25,7 @@ export = {
     /** Check support tail call optiminations (--experimental-wasm-return-call) */
     get tailCalls() { return check(tailCallsWasm) },
     /** Check support threads and atomics (--experimental-wasm-threads) */
-    get threads() { return hasSAB && check(threadsWasm) },
+    get threads() { return check(threadsWasm) },
     /** Check support SIMD (--experimental-wasm-simd) */
     get simd() { return check(simdWasm) },
     /** Check support basic reference types "anyref" (--experimental-wasm-anyref) */
@@ -72,11 +72,9 @@ const exists = typeof WebAssembly === 'object'
 const has = (entity: unknown) => exists && typeof entity === 'function'
 const check = (wasm: ArrayBufferView) => checkAndRun(wasm, false)
 
-const hasBigIntJS       = has(BigInt64Array)
 const hasStreaming      = has(WebAssembly.instantiateStreaming)
 const hasFunctionRef    = has((<any>WebAssembly).Function)
 const hasTypeReflection = has((<any>WebAssembly.Memory).type)
-const hasSAB            = has(SharedArrayBuffer)
 
 let cache = new WeakMap<ArrayBuffer, boolean>()
 
