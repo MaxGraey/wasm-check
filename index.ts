@@ -64,12 +64,12 @@ function checkAndRun(
   return ok!
 }
 
-const u8  = (...x: number[]) =>  Uint8Array.of(0, 97, 115, 109, 1, 0, 0, 0, ...x)
-const u16 = (...x: number[]) => Uint16Array.of(24832, 28019, 1, 0, ...x)
-const u32 = (...x: number[]) => Uint32Array.of(0x6D736100, 1, ...x)
+const u8  = (...bytes: number[]) =>  Uint8Array.of(0, 97, 115, 109, 1, 0, 0, 0, ...bytes)
+const u16 = (...bytes: number[]) => Uint16Array.of(24832, 28019, 1, 0, ...bytes)
+const u32 = (...bytes: number[]) => Uint32Array.of(0x6D736100, 1, ...bytes)
 
 const exists = typeof WebAssembly === 'object'
-const has = (x: unknown) => exists && typeof x === 'function'
+const has = (entity: unknown) => exists && typeof entity === 'function'
 const check = (wasm: ArrayBufferView) => checkAndRun(wasm, false)
 
 const hasBigIntJS       = has(BigInt64Array)
