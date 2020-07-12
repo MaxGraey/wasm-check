@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2015",
+    "target": "es2018",
     "module": "commonjs",
     "moduleResolution": "node",
     "esModuleInterop": true,
@@ -20,7 +20,7 @@
     "baseUrl": "./",
     "lib": [
       "dom",
-      "es2018",
+      "esnext",
       "esnext.bigint"
     ],
     "outDir": "lib"
