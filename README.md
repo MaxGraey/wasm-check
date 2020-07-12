@@ -16,7 +16,7 @@ Enable some experimental features for Chrome Canary (Mac):
 
 ## Support feature detections
 
-- [x] [Reference types](https://github.com/WebAssembly/reference-types) _(--experimental-wasm-anyref)_
+- [x] [Reference types](https://github.com/WebAssembly/reference-types) _(--experimental-wasm-reftypes)_
 - [x] [BigInt between js and wasm](https://github.com/WebAssembly/JS-BigInt-integration) _(--experimental-wasm-bigint)_
 - [x] [Bulk memory operations](https://github.com/webassembly/bulk-memory-operations) _(--experimental-wasm-bulk-memory)_
 - [x] [Exceptions](https://github.com/WebAssembly/exception-handling) _(--experimental-wasm-eh)_
