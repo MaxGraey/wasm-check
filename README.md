@@ -77,7 +77,7 @@ Output:
   exceptions: false,
   mutableGlobals: true,
   multiValues: false,
-  saturateConversions: false,
+  saturateConversions: true,
   signExtensions: true,
   tailCalls: false,
   threads: false,
