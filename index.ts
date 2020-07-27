@@ -64,9 +64,17 @@ function checkAndRun(
   return ok
 }
 
-const u8  = (...bytes: number[]) =>  Uint8Array.of(0, 97, 115, 109, 1, 0, 0, 0, ...bytes)
-const u16 = (...bytes: number[]) => Uint16Array.of(24832, 28019, 1, 0, ...bytes)
-const u32 = (...bytes: number[]) => Uint32Array.of(0x6D736100, 1, ...bytes)
+const u8   = (...bytes: number[]) =>  Uint8Array.of(0, 97, 115, 109, 1, 0, 0, 0, ...bytes)
+const u16  = (...bytes: number[]) => Uint16Array.of(24832, 28019, 1, 0, ...bytes)
+const u32  = (...bytes: number[]) => Uint32Array.of(0x6D736100, 1, ...bytes)
+
+const u8a  = (...bytes: number[]) => u8(1, 4, 1, 96, 0, 0, 3, 2, 1, 0, ...bytes, 11, 0, 10, 4, 110, 97, 109, 101, 2, 3, 1, 0, 0)
+const u16a = (...bytes: number[]) => u16(1025, 24577, 0, 515, 1, ...bytes)
+const u32a = (...bytes: number[]) => u32(1610679297, 33751040, ...bytes)
+
+const u16b = (...bytes: number[]) => u16a(...bytes, 2842, 4096, 28164, 28001, 357, 260, 256, 560, 259, 0)
+const u16c = (...bytes: number[]) => u16a(...bytes, 2560, 28164, 28001, 613, 259, 0)
+const u32b = (...bytes: number[]) => u32a(...bytes, 40239360, 259)
 
 const exists = typeof WebAssembly === 'object'
 const has = (entity: unknown) => exists && typeof entity === 'function'
@@ -83,14 +91,12 @@ const bigIntWasm = u32(
   1835101700, 17039717, 36700416,  259
 )
 
-const bulkWasm = u16(
-  1025, 24577, 0, 515, 1, 773, 1, 2561, 269, 11, 65, 65, 65, 3068, 2816, 2560,
-  28164, 28001, 613, 259, 0
+const bulkWasm = u16c(
+  773, 1, 2561, 269, 11, 65, 65, 65, 3068, 2816
 )
 
-const exceptionsWasm = u16(
-  1025, 24577, 0, 515, 1, 781, 1, 2560, 265, 7, 16390, 2311, 2827, 2560, 28164,
-  28001, 613, 259, 0
+const exceptionsWasm = u16c(
+  781, 1, 2560, 265, 7, 16390, 2311, 2827
 )
 
 const mutableGlobalsWasm = u8(
@@ -103,32 +109,26 @@ const multiValuesWasm = u16(
   28001, 613, 259, 0
 )
 
-const saturateConversionsWasm = u16(
-  1025, 24577, 0, 515, 1, 3082, 2561, 17152, 0, 0, 252, 2842, 4096, 28164, 28001,
-  357, 260, 256, 627, 259, 0
+const saturateConversionsWasm = u16b(
+  3082, 2561, 17152, 0, 0, 252
 )
 
-const signExtensionsWasm = u16(
-  1025, 24577, 0, 515, 1, 2058, 1537, 16640, 49152, 2842, 4096, 28164, 28001, 357,
-  260, 256, 560, 259, 0
+const signExtensionsWasm = u16b(
+  2058, 1537, 16640, 49152
 )
 
-const tailCallsWasm = u32(
-  1610679297, 33751040, 101318657, 301990913, 268438272, 1835101700, 17039717,
-  40239360, 259
+const tailCallsWasm = u32b(
+  101318657, 301990913, 268438272, 1835101700, 17039717
 )
 
-const threadsWasm = u8(
-  1, 4, 1, 96, 0, 0, 3, 2, 1, 0, 5, 4, 1, 3, 1, 1, 10, 7, 1, 5, 0, 254, 3, 0, 11,
-  0, 10, 4, 110, 97, 109, 101, 2, 3, 1, 0, 0
+const threadsWasm = u8a(
+  5, 4, 1, 3, 1, 1, 10, 7, 1, 5, 0, 254, 3, 0
 )
 
-const simdWasm = u32(
-  1610679297, 33751040, 84344833, 6357249, 17369600, 4259847, 186257917, 1845758464,
-  40201569, 259
+const simdWasm = u32b(
+  84344833, 6357249, 17369600, 4259847, 186257917, 1845758464
 )
 
-const referencesWasm = u8(
-  1, 4, 1, 96, 0, 0, 3, 2, 1, 0, 10, 7, 1, 5, 0, 208, 112, 26, 11, 0, 10, 4, 110,
-  97, 109, 101, 2, 3, 1, 0, 0
+const referencesWasm = u8a(
+  10, 7, 1, 5, 0, 208, 112, 26
 )
