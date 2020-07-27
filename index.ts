@@ -59,9 +59,9 @@ function checkAndRun(
         ).exports[name] as Function)()
       } catch { ok = false }
     }
-    cache.set(buffer, ok!)
+    cache.set(buffer, ok)
   }
-  return ok!
+  return ok
 }
 
 const u8  = (...bytes: number[]) =>  Uint8Array.of(0, 97, 115, 109, 1, 0, 0, 0, ...bytes)
