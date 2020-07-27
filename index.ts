@@ -1,7 +1,7 @@
 export = {
   /** Check support WebAssembly version */
   support(version = 1) {
-    return check(Uint16Array.of(0x6D736100, version))
+    return check(Uint32Array.of(0x6D736100, version))
   },
 
   /** Check support streaming compilation and instantiation */
