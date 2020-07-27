@@ -65,11 +65,11 @@ function checkAndRun(
 }
 
 const u8   = (...bytes: number[]) =>  Uint8Array.of(0, 97, 115, 109, 1, 0, 0, 0, ...bytes)
-const u16  = (...bytes: number[]) => Uint16Array.of(24832, 28019, 1, 0, ...bytes)
+// const u16  = (...bytes: number[]) => Uint16Array.of(24832, 28019, 1, 0, ...bytes)
 const u32  = (...bytes: number[]) => Uint32Array.of(0x6D736100, 1, ...bytes)
 
 const u8a  = (...bytes: number[]) => u8(1, 4, 1, 96, 0, 0, 3, 2, 1, 0, ...bytes, 11, 0, 10, 4, 110, 97, 109, 101, 2, 3, 1, 0, 0)
-const u16a = (...bytes: number[]) => u16(1025, 24577, 0, 515, 1, ...bytes)
+const u16a = (...bytes: number[]) => Uint16Array.of(24832, 28019, 1, 0, 1025, 24577, 0, 515, 1, ...bytes)
 const u32a = (...bytes: number[]) => u32(1610679297, 33751040, ...bytes)
 
 const u16b = (...bytes: number[]) => u16a(...bytes, 2842, 4096, 28164, 28001, 357, 260, 256, 560, 259, 0)
@@ -104,9 +104,8 @@ const mutableGlobalsWasm = u8(
   3, 1, 0, 8, 4, 110, 97, 109, 101, 2, 1, 0
 )
 
-const multiValuesWasm = u16(
-  1537, 24577, 512, 32639, 515, 1, 2058, 1537, 16640, 16640, 2816, 2560, 28164,
-  28001, 613, 259, 0
+const multiValuesWasm = u16c(
+  1537, 24577, 512, 32639, 515, 1, 2058, 1537, 16640, 16640, 2816
 )
 
 const saturateConversionsWasm = u16b(
