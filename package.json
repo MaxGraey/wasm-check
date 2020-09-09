@@ -35,11 +35,11 @@
     "node": ">= 8"
   },
   "devDependencies": {
-    "terser": "^4.8.0",
-    "typescript": "^3.9.7"
+    "terser": "^5.3.0",
+    "typescript": "^4.0.2"
   },
   "scripts": {
-    "build": "tsc && terser lib/index.js -c -m --toplevel -o dist/wasm-check.min.js --source-map \"content='./lib/index.js.map'\"",
+    "build": "tsc && terser lib/index.js -c -m --toplevel --ecma 2018 -o dist/wasm-check.min.js --source-map \"content='./lib/index.js.map'\"",
     "watch": "tsc -w",
     "prepublishOnly": "yarn build"
   }
