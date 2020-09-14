@@ -5,7 +5,7 @@ export = {
   },
 
   /** Check support streaming compilation and instantiation */
-  get supportStreaming() { return hasStreaming },
+  get supportStreaming() { return has(WA.instantiateStreaming) },
 
   feature: {
     /** Check support JavaScript BigInt to WebAssembly i64 integration (--experimental-wasm-bigint) */
@@ -31,9 +31,9 @@ export = {
     /** Check support basic reference types "externref" (--experimental-wasm-reftypes) */
     get references() { return checkAndRun(referencesWasm) },
     /** Check support Type Reflection (--experimental-wasm-type-reflection) */
-    get typeReflection() { return hasTypeReflection },
+    get typeReflection() { return has((<any>WA.Memory).type) },
     /** Check support typed function references and closures (pre-proposal) */
-    get funcReferences() { return hasFunctionRef },
+    get funcReferences() { return has((<any>WA).Function) },
     /* TODO
      * - GC
      * - Web IDL Bindings (Host binding) ?
@@ -46,11 +46,10 @@ function checkAndRun(
   exec?: boolean
 ) {
   if (!exists) return false
-  const buffer = wasm.buffer as ArrayBuffer
+  const buffer = wasm.buffer
   let ok = cache.get(buffer)
   if (ok == null) {
-    ok = WA.validate(buffer)
-    if (ok && exec) {
+    if ((ok = WA.validate(buffer)) && exec) {
       try {
         (new WA.Instance(
           new WA.Module(buffer)
@@ -78,11 +77,7 @@ const u16c = (...bytes: number[]) => u16a(...bytes, 2560, 28164, 28001, 613, 259
 const exists = typeof WA === 'object'
 const has = (entity: unknown) => exists && typeof entity === 'function'
 
-const hasStreaming      = has(WA.instantiateStreaming)
-const hasFunctionRef    = has((<any>WA).Function)
-const hasTypeReflection = has((<any>WA.Memory).type)
-
-const cache = new WeakMap<ArrayBuffer, boolean>()
+const cache = new WeakMap<ArrayBufferLike, boolean>()
 
 const bigIntWasm = u32(
   1610679553, 58589440, 117440770, 805372165, 101318656, 1107297281, 268438272,
