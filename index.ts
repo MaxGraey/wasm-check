@@ -14,21 +14,21 @@ export = {
     get bulk() { return checkAndRun(bulkWasm) },
     /** Check support exception handling (--experimental-wasm-eh) */
     get exceptions() { return checkAndRun(exceptionsWasm) },
-    /** Check support import & export of mutable globals (--experimental-wasm-mut-global) */
-    get mutableGlobals() { return checkAndRun(mutableGlobalsWasm) },
+    /** Check support import & export of mutable global (--experimental-wasm-mut-global) */
+    get mutableGlobal() { return checkAndRun(mutableGlobalWasm) },
     /** Check support multi values (--experimental-wasm-mv) */
-    get multiValues() { return checkAndRun(multiValuesWasm) },
+    get multiValue() { return checkAndRun(multiValueWasm) },
     /** Check support non-trapping float-to-int conversions (--experimental-wasm-sat-f2i-conversions) */
     get saturateConversions() { return checkAndRun(saturateConversionsWasm) },
     /** Check support zero and sign extensions (--experimental-wasm-se) */
     get signExtensions() { return checkAndRun(signExtensionsWasm) },
     /** Check support tail call optiminations (--experimental-wasm-return-call) */
-    get tailCalls() { return checkAndRun(tailCallsWasm) },
+    get tailCall() { return checkAndRun(tailCallWasm) },
     /** Check support threads and atomics (--experimental-wasm-threads) */
     get threads() { return checkAndRun(threadsWasm) },
     /** Check support SIMD (--experimental-wasm-simd) */
     get simd() { return checkAndRun(simdWasm) },
-    /** Check support basic reference types "anyref" (--experimental-wasm-anyref) */
+    /** Check support basic reference types "externref" (--experimental-wasm-reftypes) */
     get references() { return checkAndRun(referencesWasm) },
     /** Check support Type Reflection (--experimental-wasm-type-reflection) */
     get typeReflection() { return hasTypeReflection },
@@ -97,12 +97,12 @@ const exceptionsWasm = u16c(
   781, 1, 2560, 265, 7, 16390, 2311, 2827
 )
 
-const mutableGlobalsWasm = u8(
+const mutableGlobalWasm = u8(
   2, 8, 1, 1, 97, 1, 98, 3, 127, 1, 6, 6, 1, 127, 1, 65, 0, 11, 7, 5, 1, 1, 97,
   3, 1, 0, 8, 4, 110, 97, 109, 101, 2, 1, 0
 )
 
-const multiValuesWasm = u16c(
+const multiValueWasm = u16c(
   1537, 24577, 512, 32639, 515, 1, 2058, 1537, 16640, 16640, 2816
 )
 
@@ -114,7 +114,7 @@ const signExtensionsWasm = u16b(
   2058, 1537, 16640, 49152
 )
 
-const tailCallsWasm = u32a(
+const tailCallWasm = u32a(
   101318657, 301990913, 268438272, 1835101700, 17039717
 )
 
