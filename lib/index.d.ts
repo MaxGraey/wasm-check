@@ -10,26 +10,26 @@ declare const _default: {
         readonly bulk: boolean;
         /** Check support exception handling (--experimental-wasm-eh) */
         readonly exceptions: boolean;
-        /** Check support import & export of mutable globals (--experimental-wasm-mut-global) */
-        readonly mutableGlobals: boolean;
+        /** Check support import & export of mutable global (--experimental-wasm-mut-global) */
+        readonly mutableGlobal: boolean;
         /** Check support multi values (--experimental-wasm-mv) */
-        readonly multiValues: boolean;
+        readonly multiValue: boolean;
         /** Check support non-trapping float-to-int conversions (--experimental-wasm-sat-f2i-conversions) */
         readonly saturateConversions: boolean;
         /** Check support zero and sign extensions (--experimental-wasm-se) */
         readonly signExtensions: boolean;
         /** Check support tail call optiminations (--experimental-wasm-return-call) */
-        readonly tailCalls: boolean;
+        readonly tailCall: boolean;
         /** Check support threads and atomics (--experimental-wasm-threads) */
         readonly threads: boolean;
         /** Check support SIMD (--experimental-wasm-simd) */
         readonly simd: boolean;
-        /** Check support basic reference types "anyref" (--experimental-wasm-anyref) */
+        /** Check support basic reference types "externref" (--experimental-wasm-reftypes) */
         readonly references: boolean;
         /** Check support Type Reflection (--experimental-wasm-type-reflection) */
         readonly typeReflection: boolean;
         /** Check support typed function references and closures (pre-proposal) */
-        readonly functionReferences: boolean;
+        readonly funcReferences: boolean;
     };
 };
 export = _default;

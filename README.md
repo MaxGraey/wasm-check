@@ -75,16 +75,16 @@ Output:
 { bigInt: false,
   bulk: true,
   exceptions: false,
-  mutableGlobals: true,
-  multiValues: false,
+  mutableGlobal: true,
+  multiValue: false,
   saturateConversions: true,
   signExtensions: true,
-  tailCalls: false,
+  tailCall: false,
   threads: false,
   simd: false,
   references: false,
   typeReflection: false,
-  functionReferences: false }
+  funcReferences: false }
 ```
 
 #### Or check concrete feature
