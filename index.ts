@@ -1,7 +1,7 @@
 export = {
   /** Check support WebAssembly version */
   support(version = 1) {
-    return check(Uint32Array.of(0x6D736100, version))
+    return checkAndRun(Uint32Array.of(0x6D736100, version))
   },
 
   /** Check support streaming compilation and instantiation */
@@ -9,27 +9,27 @@ export = {
 
   feature: {
     /** Check support JavaScript BigInt to WebAssembly i64 integration (--experimental-wasm-bigint) */
-    get bigInt() { return checkAndRun(bigIntWasm) },
+    get bigInt() { return checkAndRun(bigIntWasm, true) },
     /** Check support bulk memory operations (--experimental-wasm-bulk-memory) */
-    get bulk() { return check(bulkWasm) },
+    get bulk() { return checkAndRun(bulkWasm) },
     /** Check support exception handling (--experimental-wasm-eh) */
-    get exceptions() { return check(exceptionsWasm) },
+    get exceptions() { return checkAndRun(exceptionsWasm) },
     /** Check support import & export of mutable globals (--experimental-wasm-mut-global) */
-    get mutableGlobals() { return check(mutableGlobalsWasm) },
+    get mutableGlobals() { return checkAndRun(mutableGlobalsWasm) },
     /** Check support multi values (--experimental-wasm-mv) */
-    get multiValues() { return check(multiValuesWasm) },
+    get multiValues() { return checkAndRun(multiValuesWasm) },
     /** Check support non-trapping float-to-int conversions (--experimental-wasm-sat-f2i-conversions) */
-    get saturateConversions() { return check(saturateConversionsWasm) },
+    get saturateConversions() { return checkAndRun(saturateConversionsWasm) },
     /** Check support zero and sign extensions (--experimental-wasm-se) */
-    get signExtensions() { return check(signExtensionsWasm) },
+    get signExtensions() { return checkAndRun(signExtensionsWasm) },
     /** Check support tail call optiminations (--experimental-wasm-return-call) */
-    get tailCalls() { return check(tailCallsWasm) },
+    get tailCalls() { return checkAndRun(tailCallsWasm) },
     /** Check support threads and atomics (--experimental-wasm-threads) */
-    get threads() { return check(threadsWasm) },
+    get threads() { return checkAndRun(threadsWasm) },
     /** Check support SIMD (--experimental-wasm-simd) */
-    get simd() { return check(simdWasm) },
+    get simd() { return checkAndRun(simdWasm) },
     /** Check support basic reference types "anyref" (--experimental-wasm-anyref) */
-    get references() { return check(referencesWasm) },
+    get references() { return checkAndRun(referencesWasm) },
     /** Check support Type Reflection (--experimental-wasm-type-reflection) */
     get typeReflection() { return hasTypeReflection },
     /** Check support typed function references and closures (pre-proposal) */
@@ -43,9 +43,7 @@ export = {
 
 function checkAndRun(
   wasm: ArrayBufferView,
-  exec = true,
-  name = '0',
-  env  = {} as Record<string, Record<string, any>>
+  exec?: boolean
 ) {
   if (!exists) return false
   const buffer = wasm.buffer as ArrayBuffer
@@ -55,8 +53,8 @@ function checkAndRun(
     if (ok && exec) {
       try {
         (new WebAssembly.Instance(
-          new WebAssembly.Module(buffer), env
-        ).exports[name] as Function)()
+          new WebAssembly.Module(buffer)
+        ).exports['0'] as Function)()
       } catch { ok = false }
     }
     cache.set(buffer, ok)
@@ -77,13 +75,12 @@ const u16c = (...bytes: number[]) => u16a(...bytes, 2560, 28164, 28001, 613, 259
 
 const exists = typeof WebAssembly === 'object'
 const has = (entity: unknown) => exists && typeof entity === 'function'
-const check = (wasm: ArrayBufferView) => checkAndRun(wasm, false)
 
 const hasStreaming      = has(WebAssembly.instantiateStreaming)
 const hasFunctionRef    = has((<any>WebAssembly).Function)
 const hasTypeReflection = has((<any>WebAssembly.Memory).type)
 
-let cache = new WeakMap<ArrayBuffer, boolean>()
+const cache = new WeakMap<ArrayBuffer, boolean>()
 
 const bigIntWasm = u32(
   1610679553, 58589440, 117440770, 805372165, 101318656, 1107297281, 268438272,
