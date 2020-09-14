@@ -33,7 +33,7 @@ export = {
     /** Check support Type Reflection (--experimental-wasm-type-reflection) */
     get typeReflection() { return hasTypeReflection },
     /** Check support typed function references and closures (pre-proposal) */
-    get functionReferences() { return hasFunctionRef },
+    get funcReferences() { return hasFunctionRef },
     /* TODO
      * - GC
      * - Web IDL Bindings (Host binding) ?
@@ -49,11 +49,11 @@ function checkAndRun(
   const buffer = wasm.buffer as ArrayBuffer
   let ok = cache.get(buffer)
   if (ok == null) {
-    ok = WebAssembly.validate(buffer)
+    ok = WA.validate(buffer)
     if (ok && exec) {
       try {
-        (new WebAssembly.Instance(
-          new WebAssembly.Module(buffer)
+        (new WA.Instance(
+          new WA.Module(buffer)
         ).exports['0'] as Function)()
       } catch { ok = false }
     }
@@ -61,6 +61,8 @@ function checkAndRun(
   }
   return ok
 }
+
+const WA = WebAssembly;
 
 const u8   = (...bytes: number[]) =>  Uint8Array.of(0, 97, 115, 109, 1, 0, 0, 0, ...bytes)
 // const u16  = (...bytes: number[]) => Uint16Array.of(24832, 28019, 1, 0, ...bytes)
@@ -73,12 +75,12 @@ const u32a = (...bytes: number[]) => u32(1610679297, 33751040, ...bytes, 4023936
 const u16b = (...bytes: number[]) => u16a(...bytes, 2842, 4096, 28164, 28001, 357, 260, 256, 560, 259, 0)
 const u16c = (...bytes: number[]) => u16a(...bytes, 2560, 28164, 28001, 613, 259, 0)
 
-const exists = typeof WebAssembly === 'object'
+const exists = typeof WA === 'object'
 const has = (entity: unknown) => exists && typeof entity === 'function'
 
-const hasStreaming      = has(WebAssembly.instantiateStreaming)
-const hasFunctionRef    = has((<any>WebAssembly).Function)
-const hasTypeReflection = has((<any>WebAssembly.Memory).type)
+const hasStreaming      = has(WA.instantiateStreaming)
+const hasFunctionRef    = has((<any>WA).Function)
+const hasTypeReflection = has((<any>WA.Memory).type)
 
 const cache = new WeakMap<ArrayBuffer, boolean>()
 

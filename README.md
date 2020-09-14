@@ -84,7 +84,7 @@ Output:
   simd: false,
   references: false,
   typeReflection: false,
-  functionReferences: false }
+  funcReferences: false }
 ```
 
 #### Or check concrete feature

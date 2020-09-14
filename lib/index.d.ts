@@ -29,7 +29,7 @@ declare const _default: {
         /** Check support Type Reflection (--experimental-wasm-type-reflection) */
         readonly typeReflection: boolean;
         /** Check support typed function references and closures (pre-proposal) */
-        readonly functionReferences: boolean;
+        readonly funcReferences: boolean;
     };
 };
 export = _default;
