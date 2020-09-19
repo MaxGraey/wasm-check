@@ -63,7 +63,7 @@ function check(
 
 const WA = WebAssembly;
 
-const u8   = (...bytes: number[]) =>  Uint8Array.of(0, 97, 115, 109, 1, 0, 0, 0, ...bytes)
+const u8   = (...bytes: number[]) => Uint8Array.of(0, 97, 115, 109, 1, 0, 0, 0, ...bytes)
 // const u16  = (...bytes: number[]) => Uint16Array.of(24832, 28019, 1, 0, ...bytes)
 const u32  = (...bytes: number[]) => Uint32Array.of(0x6D736100, 1, ...bytes)
 
