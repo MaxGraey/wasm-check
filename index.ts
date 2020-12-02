@@ -97,8 +97,9 @@ const mutableGlobalWasm = u8(
   3, 1, 0, 8, 4, 110, 97, 109, 101, 2, 1, 0
 )
 
-const multiValueWasm = u16c(
-  1537, 24577, 512, 32639, 515, 1, 2058, 1537, 16640, 16640, 2816
+const multiValueWasm = Uint16Array.of(
+  24832, 28019, 1, 0, 1537, 24577, 512, 32639, 515, 1, 2058,
+  1537, 16640, 16640, 2816, 2560, 28164, 28001, 613, 259, 0
 )
 
 const saturateConversionsWasm = u16b(
