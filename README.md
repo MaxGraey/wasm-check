@@ -72,11 +72,12 @@ console.log(features);
 
 Output:
 ```js
-{ bigInt: false,
+{
+  bigInt: true,
   bulk: true,
   exceptions: false,
   mutableGlobal: true,
-  multiValue: false,
+  multiValue: true,
   saturateConversions: true,
   signExtensions: true,
   tailCall: false,
@@ -84,7 +85,8 @@ Output:
   simd: false,
   references: false,
   typeReflection: false,
-  funcReferences: false }
+  funcReferences: false
+}
 ```
 
 #### Or check concrete feature
