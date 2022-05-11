@@ -5,7 +5,7 @@ export = {
   },
 
   /** Check support streaming compilation and instantiation */
-  get supportStreaming() { return has(WA.instantiateStreaming) },
+  get supportStreaming() { return exists && has(WA.instantiateStreaming) },
 
   feature: {
     /** Check support JavaScript BigInt to WebAssembly i64 integration (--experimental-wasm-bigint) */
@@ -31,9 +31,9 @@ export = {
     /** Check support basic reference types "externref" (--experimental-wasm-reftypes) */
     get references() { return check(referencesWasm) },
     /** Check support Type Reflection (--experimental-wasm-type-reflection) */
-    get typeReflection() { return has((<any>WA.Memory).type) },
+    get typeReflection() { return exists && has((<any>WA.Memory).type) },
     /** Check support typed function references and closures (pre-proposal) */
-    get funcReferences() { return has((<any>WA).Function) },
+    get funcReferences() { return exists && has((<any>WA).Function) },
     /* TODO
      * - GC
      * - Web IDL Bindings (Host binding) ?
@@ -61,7 +61,9 @@ function check(
   return ok
 }
 
-const WA = WebAssembly;
+const WA = WebAssembly
+const exists = typeof WA === 'object'
+const has = (entity: unknown) => typeof entity !== 'undefined'
 
 const u8   = (...bytes: number[]) => Uint8Array.of(0, 97, 115, 109, 1, 0, 0, 0, ...bytes)
 // const u16  = (...bytes: number[]) => Uint16Array.of(24832, 28019, 1, 0, ...bytes)
@@ -71,9 +73,6 @@ const u32a = (...bytes: number[]) => u32(1610679297, 33751040, ...bytes, 4023936
 const u8a  = (...bytes: number[]) => u8(1, 4, 1, 96, 0, 0, 3, 2, 1, 0, ...bytes, 11, 0, 10, 4, 110, 97, 109, 101, 2, 3, 1, 0, 0)
 const u16a = (...bytes: number[]) => Uint16Array.of(24832, 28019, 1, 0, 1025, 24577, 0, 515, 1, ...bytes)
 const u16b = (...bytes: number[]) => u16a(...bytes, 2842, 4096, 28164, 28001, 357, 260, 256, 560, 259, 0)
-
-const exists = typeof WA === 'object'
-const has = (entity: unknown) => exists && typeof entity === 'function'
 
 const cache = new WeakMap<ArrayBufferLike, boolean>()
 
