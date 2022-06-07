@@ -10,6 +10,8 @@ declare const _default: {
         readonly bulk: boolean;
         /** Check support exception handling (--experimental-wasm-eh) */
         readonly exceptions: boolean;
+        /** Check support 64-bit memory (--experimental-wasm-memory64) */
+        readonly memory64: boolean;
         /** Check support import & export of mutable global (--experimental-wasm-mut-global) */
         readonly mutableGlobal: boolean;
         /** Check support multi values (--experimental-wasm-mv) */
