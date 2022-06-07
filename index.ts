@@ -61,7 +61,7 @@ function check(
   return ok
 }
 
-const WA = WebAssembly
+const WA = globalThis.WebAssembly
 const exists = typeof WA === 'object'
 const has = (entity: unknown) => typeof entity !== 'undefined'
 
