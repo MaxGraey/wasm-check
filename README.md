@@ -19,7 +19,7 @@ Enable some experimental features for Chrome Canary (Mac):
 - [x] [Reference types](https://github.com/WebAssembly/reference-types) _(--experimental-wasm-reftypes)_
 - [x] [BigInt between js and wasm](https://github.com/WebAssembly/JS-BigInt-integration) _(--experimental-wasm-bigint)_
 - [x] [Bulk memory operations](https://github.com/webassembly/bulk-memory-operations) _(--experimental-wasm-bulk-memory)_
-- [x] [Memeory 64-bit](https://github.com/WebAssembly/memory64) _(--experimental-wasm-memory64)_
+- [x] [Memory 64-bit](https://github.com/WebAssembly/memory64) _(--experimental-wasm-memory64)_
 - [x] [Exceptions](https://github.com/WebAssembly/exception-handling) _(--experimental-wasm-eh)_
 - [x] [Multi values](https://github.com/WebAssembly/multi-value) _(--experimental-wasm-mv)_
 - [x] [Tail recursion calls](https://github.com/webassembly/tail-call) _(--experimental-wasm-return-call)_
@@ -29,13 +29,14 @@ Enable some experimental features for Chrome Canary (Mac):
 - [x] [Threads](https://github.com/webassembly/threads) _(--experimental-wasm-threads)_
 - [x] [Type reflection](https://github.com/WebAssembly/js-types) _(--experimental-wasm-type-reflection)_
 
-
 ## Install
 
 ```
 yarn add wasm-check
 ```
+
 or
+
 ```
 npm i wasm-check
 ```
@@ -49,9 +50,9 @@ import * as check from 'wasm-check';
 // or
 // const check = require('wasm-check');
 
-console.log(check.support()); // default MVP
-console.log(check.support(1)); // same
-console.log(check.support(2)); // version 2 (for future)
+console.log(check.support());  // WebAssembly 1.0 (MVP)
+console.log(check.support(1)); // ^^^
+console.log(check.support(2)); // WebAssembly 2.0
 ```
 
 #### Check supporting streaming compilation
@@ -72,6 +73,7 @@ console.log(features);
 ```
 
 Output:
+
 ```js
 {
   bigInt: true,
@@ -103,4 +105,3 @@ console.log(check.feature.tailCalls); // has tail call optimization support?
 #### TODO
 
 - [ ] GC integration feature check
-- [ ] Interface Types feature check
