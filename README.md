@@ -16,17 +16,17 @@ Enable some experimental features for Chrome Canary (Mac):
 
 ## Support feature detections
 
-- [x] [Reference types](https://github.com/WebAssembly/reference-types) _(--experimental-wasm-reftypes)_
-- [x] [BigInt between js and wasm](https://github.com/WebAssembly/JS-BigInt-integration) _(--experimental-wasm-bigint)_
-- [x] [Bulk memory operations](https://github.com/webassembly/bulk-memory-operations) _(--experimental-wasm-bulk-memory)_
+- [x] [Reference types](https://github.com/WebAssembly/reference-types) _(standardized)_
+- [x] [BigInt between js and wasm](https://github.com/WebAssembly/JS-BigInt-integration) _(standardized)_
+- [x] [Bulk memory operations](https://github.com/webassembly/bulk-memory-operations)
 - [x] [Memory 64-bit](https://github.com/WebAssembly/memory64) _(--experimental-wasm-memory64)_
 - [x] [Exceptions](https://github.com/WebAssembly/exception-handling) _(--experimental-wasm-eh)_
-- [x] [Multi values](https://github.com/WebAssembly/multi-value) _(--experimental-wasm-mv)_
+- [x] [Multi values](https://github.com/WebAssembly/multi-value) _(standardized)_
 - [x] [Tail recursion calls](https://github.com/webassembly/tail-call) _(--experimental-wasm-return-call)_
-- [x] [Saturated (non-trapping) conversions from float to int](https://github.com/WebAssembly/nontrapping-float-to-int-conversions) _(--experimental-wasm-sat-f2i-conversions)_
-- [x] [Sign/zero extensions](https://github.com/WebAssembly/sign-extension-ops) _(--experimental-wasm-se)_
-- [x] [SIMD](https://github.com/webassembly/simd) _(--experimental-wasm-simd)_
-- [x] [Threads](https://github.com/webassembly/threads) _(--experimental-wasm-threads)_
+- [x] [Saturated (non-trapping) conversions from float to int](https://github.com/WebAssembly/nontrapping-float-to-int-conversions) _(standardized)_
+- [x] [Sign extensions](https://github.com/WebAssembly/sign-extension-ops) _(standardized)_
+- [x] [SIMD](https://github.com/webassembly/simd) _(standardized)_
+- [x] [Threads](https://github.com/webassembly/threads) _(standardized)_
 - [x] [Type reflection](https://github.com/WebAssembly/js-types) _(--experimental-wasm-type-reflection)_
 
 ## Install
