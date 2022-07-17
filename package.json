@@ -1,6 +1,6 @@
 {
   "name": "wasm-check",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "author": "MaxGraey @ 2021",
   "license": "MIT",
   "description": "TypeScript / JavaScript library for detect WebAssembly features in node.js & browser",
