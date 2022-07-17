@@ -58,12 +58,12 @@ function check(
         ).exports['0'] as Function)()
       } catch { ok = false }
     }
-    cache.set(buffer, ok)
+    cache.set(buffer, ok!)
   }
-  return ok
+  return ok!
 }
 
-const WA = globalThis.WebAssembly
+const WA = (<any>this).WebAssembly || globalThis.WebAssembly
 const exists = typeof WA === 'object'
 const has = (entity: unknown) => typeof entity !== 'undefined'
 
