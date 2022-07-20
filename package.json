@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "terser": "^5.3.1",
-    "typescript": "^4.0.2"
+    "typescript": "^4.7.4"
   },
   "scripts": {
     "build": "tsc && terser lib/index.js -c -m --toplevel --ecma 2018 -o dist/wasm-check.min.js --source-map \"content='./lib/index.js.map'\"",
