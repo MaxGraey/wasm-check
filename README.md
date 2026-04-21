@@ -19,15 +19,21 @@ Enable some experimental features for Chrome Canary (Mac):
 - [x] [Reference types](https://github.com/WebAssembly/reference-types) _(standardized)_
 - [x] [BigInt between js and wasm](https://github.com/WebAssembly/JS-BigInt-integration) _(standardized)_
 - [x] [Bulk memory operations](https://github.com/webassembly/bulk-memory-operations) _(standardized)_
-- [x] [Memory 64-bit](https://github.com/WebAssembly/memory64) _(--experimental-wasm-memory64)_
 - [x] [Exceptions](https://github.com/WebAssembly/exception-handling) _(--experimental-wasm-eh)_
+- [x] [Memory 64-bit](https://github.com/WebAssembly/memory64) _(--experimental-wasm-memory64)_
+- [x] [Custom page sizes](https://github.com/WebAssembly/custom-page-sizes)
+- [x] [Mutable globals](https://github.com/WebAssembly/mutable-global) _(standardized)_
 - [x] [Multi values](https://github.com/WebAssembly/multi-value) _(standardized)_
-- [x] [Tail recursion calls](https://github.com/webassembly/tail-call) _(--experimental-wasm-return-call)_
 - [x] [Saturated (non-trapping) conversions from float to int](https://github.com/WebAssembly/nontrapping-float-to-int-conversions) _(standardized)_
 - [x] [Sign extensions](https://github.com/WebAssembly/sign-extension-ops) _(standardized)_
-- [x] [SIMD](https://github.com/webassembly/simd) _(standardized)_
+- [x] [Tail calls](https://github.com/webassembly/tail-call) _(--experimental-wasm-return-call)_
 - [x] [Threads](https://github.com/webassembly/threads) _(standardized)_
+- [x] [SIMD](https://github.com/webassembly/simd) _(standardized)_
+- [x] [Relaxed SIMD](https://github.com/WebAssembly/relaxed-simd)
+- [x] [GC](https://github.com/WebAssembly/gc)
 - [x] [Type reflection](https://github.com/WebAssembly/js-types) _(--experimental-wasm-type-reflection)_
+- [x] [Typed function references](https://github.com/WebAssembly/function-references)
+- [x] [JS String builtins](https://github.com/WebAssembly/js-string-builtins)
 
 ## Install
 
@@ -50,9 +56,10 @@ import * as check from 'wasm-check';
 // or
 // const check = require('wasm-check');
 
-console.log(check.support());  // WebAssembly 1.0 (MVP)
+console.log(check.support());  // WebAssembly >= 1.0
 console.log(check.support(1)); // ^^^
-console.log(check.support(2)); // WebAssembly 2.0
+console.log(check.support(2)); // WebAssembly >= 2.0
+console.log(check.support(3)); // WebAssembly >= 3.0
 ```
 
 #### Check supporting streaming compilation
@@ -78,18 +85,22 @@ Output:
 {
   bigInt: true,
   bulk: true,
-  exceptions: false,
-  memory64: false,
+  exceptions: true,
+  memory64: true,
+  customPageSizes: false,
   mutableGlobal: true,
   multiValue: true,
   saturateConversions: true,
   signExtensions: true,
-  tailCall: false,
-  threads: false,
-  simd: false,
-  references: false,
+  tailCall: true,
+  threads: true,
+  simd: true,
+  relaxedSimd: true,
+  gc: true,
+  references: true,
   typeReflection: false,
-  funcReferences: false
+  funcReferences: true,
+  jsStringBuiltins: true
 }
 ```
 
@@ -99,9 +110,8 @@ Output:
 import * as check from 'wasm-check';
 
 console.log(check.feature.simd); // has SIMD support?
-console.log(check.feature.tailCalls); // has tail call optimization support?
+console.log(check.feature.relaxedSimd); // has Relaxed SIMD support?
+console.log(check.feature.tailCall); // has tail call support?
+console.log(check.feature.gc); // has Wasm GC support?
+console.log(check.feature.jsStringBuiltins); // has JS String builtins support?
 ```
-
-#### TODO
-
-- [ ] GC integration feature check

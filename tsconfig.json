@@ -1,31 +1,23 @@
 {
   "compilerOptions": {
-    "target": "es2018",
+    "target": "es2020",
     "module": "commonjs",
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "sourceMap": true,
-    "alwaysStrict": true,
-    "strictPropertyInitialization": true,
-    "strictFunctionTypes": true,
-    "strictNullChecks": true,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "noImplicitReturns": true,
-    "experimentalDecorators": true,
-    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "bundler",
     "declaration": true,
-    "baseUrl": "./",
+    "outDir": "lib",
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "forceConsistentCasingInFileNames": true,
+    // "skipLibCheck": true,
+    "types": [],
     "lib": [
       "dom",
       "esnext",
       "esnext.bigint"
-    ],
-    "outDir": "lib"
+    ]
   },
-  "include": [
+  "files": [
     "index.ts"
   ]
 }
