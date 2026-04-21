@@ -3,7 +3,7 @@
 Detect WebAssembly Features
 ---
 
-A tiny with zero dependencies library for WebAssembly's features detection.
+A tiny, zero-dependency library for detecting WebAssembly features (**~2 kB minified**).
 
 ## Support features
 
