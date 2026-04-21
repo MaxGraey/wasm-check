@@ -44,11 +44,11 @@ export = {
     get funcReferences() { return check(funcReferencesWasm) },
     /** Check support JS String builtins */
     get jsStringBuiltins() {
-      if (!exists) return false
+      // Supported engines consume `wasm:js-string` builtins, so no imports remain.
       try {
-        return WA.Module.imports(new WA.Module(jsStringBuiltinsWasm.buffer, {
+        return exists && !WA.Module.imports(new WA.Module(jsStringBuiltinsWasm.buffer, {
           builtins: ['js-string']
-        })).length === 0
+        })).length
       } catch { return false }
     },
   }
