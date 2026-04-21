@@ -1,20 +1,11 @@
 [![NPM registry](https://img.shields.io/npm/v/wasm-check.svg?style=for-the-badge)](https://www.npmjs.com/package/wasm-check)[![NPM license](https://img.shields.io/badge/license-mit-green.svg?style=for-the-badge)](LICENSE.md)
 
-Library for detect WebAssembly post-MVP features in NodeJS & Browser. Small and with zero dependencies.
+Detect WebAssembly Features
 ---
 
-## About post-MVP WebAssembly features
+A tiny with zero dependencies library for WebAssembly's features detection.
 
-https://github.com/WebAssembly/design/blob/master/FutureFeatures.md#tracking-issues
-
-_Tests on Canary with flags:_
-
-Enable some experimental features for Chrome Canary (Mac):
-```
-/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --js-flags="--experimental-wasm-eh"
-```
-
-## Support feature detections
+## Support features
 
 - [x] [Reference types](https://github.com/WebAssembly/reference-types) _(standardized)_
 - [x] [BigInt between js and wasm](https://github.com/WebAssembly/JS-BigInt-integration) _(standardized)_
